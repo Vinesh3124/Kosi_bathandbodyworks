@@ -42,5 +42,157 @@
       "offerPrice": "3/$20",
       "Description": ""
     }
+  ],
+  "Fresh": [
+    {
+      "id":10,
+      "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw4f6ab6e6/hires/026234484.jpg?sh=471",
+      "name": "IMAGES WAIKIKI BEACH COCONUT",
+      "Short_Description": "3-Wick Candle",
+      "Price": "24.50",
+      "Description": "The scent of Tropical White Coconut, Saltwater Breezes & Sun-Bleached Woods in the room-filling fragrance of our 3-Wick Candle with Essential Oils"
+    },
+    {
+      "id":11,
+      "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwa6c7e209/crop/026192327_crop.jpg?sw=500&sh=600&sm=fit&q=75",
+      "name": "PINEAPPLE SUCCULENT",
+      "Short_Description": "Wallflower Fragrance Plug",
+      "Price": "14.50",
+      "Description": "This sweet plug's what you get when tropical décor goes boho. Pair with your favorite Wallflowers Fragrance Refill!"
+    },
+    {
+      "id":12,
+      "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw80265a7e/hires/026237014.jpg?sh=471",
+      "name": "WAIKIKI BEACH COCONUT",
+      "Short_Description": "Wallflowers Fragrance Refill",
+      "Price": "3.95",
+      "Description": "Home fragrance that lasts for weeks and weeks! Pair with a Wallflowers plug and enjoy the scent of Tropical White Coconut, Saltwater Breezes & Sun-Bleached Woods with Essential Oils"
+    }, 
+    {
+      "id":13,
+      "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw042f78a1/hires/026208712.jpg?sh=471",
+      "name": "BELIZE TROPICAL CABANA",
+      "Short_Description": "Shower Gel",
+      "Price": "13.50",
+      "Description": "A sweet blend of banana daiquiri, juicy pineapple and golden sands in a rich, bubbly lather lets you get adventurous in the vivid landscapes of Central America."
+    }, 
+    {
+      "id":14,
+      "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwcaa3f955/hires/026242802.jpg?sh=471",
+      "name": "WAIKIKI BEACH COCONUT",
+      "Short_Description": "Single Wick Candle",
+      "Price": "14.50",
+      "Description": "The scent of Tropical White Coconut, Saltwater Breezes & Sun-Bleached Woods in the room-filling fragrance of our Single Wick Candle with Essential Oils"
+    }, 
+    {
+      "id":15,
+      "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6697496a/hires/026211086.jpg?sh=471",
+      "name": "WAIKIKI BEACH COCONUT",
+      "Short_Description": "Hand Cream",
+      "Price": "6.50",
+      "Description": "A breezy blend of tropical white coconut, saltwater breezes and sun-bleached woods in our deeply moisturizing hand cream that takes you to the shores of one of the world's most beautiful beaches."
+    }, 
+    {
+      "id":16,
+      "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw7f76627c/hires/026205675.jpg?sh=471",
+      "name": "WAIKIKI BEACH COCONUT",
+      "Short_Description": "Ultra Shea Body Cream",
+      "Price": "14.50",
+      "Description": "A breezy blend of tropical white coconut, saltwater breezes and sun-bleached woods in our 24-hour moisturizing cream that takes you to the shores of one of the world's most beautiful beaches."
+    },
+    {
+      "id":17,
+      "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw65d43232/hires/026205595.jpg?sh=471",
+      "name": "HONOLULU SUN",
+      "Short_Description": "Gentle Foaming Hand Soap",
+      "Price": "7.50",
+      "Description": "A dreamy blend of fresh island coconut, Pacific palm & driftwood in our luxurious foaming soap"
+    },
+    {
+      "id":18,
+      "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw2f431751/hires/026205672.jpg?sh=471",
+      "name": "BAHAMAS PASSIONFRUIT & BANANA FLOWER",
+      "Short_Description": "Fine Fragrance Mist",
+      "Price": "15.50",
+      "Description": "A fruity blend of passionfruit, pineapple leaves and banana flower in our irresistible, long-lasting mist for island hopping where the beaches are stunning and the waters are crystal clear."
+    }
+  ],
+  "Banner": [
+    {
+      "id":19,
+      "img": "https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw587b31e7/images/Spring2021/sp_tropical-traditions_SP2_0_hps.jpg",
+      "Description": "Destination: a sinkside tropical oasis. ETA: 20 seconds.",
+      "link": "Shop Hand Soaps"
+    },
+    {
+      "id":20,
+      "img": "https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwd016cff5/images/Spring2021/cndl_all-candles_SP2_0_hps.jpg",
+      "Description": "Go from beach to rainforest, one tropical scent at a time.",
+      "link": "Shop Candles"
+    },
+    {
+      "id":21,
+      "img": "https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw8c46c49b/images/Spring2021/sn_seasonal_SP2_0_hps.jpg",
+      "Description": "These sunshiny sanitizers kill 99.9% of most common germs.",
+      "link": "Shop Hand Sanitizers"
+    },
+    {
+      "id":22,
+      "img": "https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwc5d1454b/images/Spring2021/ebc_ocean-ess_SP2_0_hps.jpg",
+      "Description": "Infused with sea minerals. Inspired by the healing energy of the ocean.",
+      "link": "Shop Aromatherapy"
+    }
+  ],
+  "Category": [
+    {
+      "img": "https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw9404640f/images/Spring2021/fbc_waikiki-ffm_SP2_0_vn.jpg",
+      "name": "BODY CARE" 
+    },
+    {
+      "img": "https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw895db34b/images/Spring2021/cndl_viz-nav-3w_SP2_0_vn.jpg",
+      "name": "3-WICK CANDELS" 
+    },
+    {
+      "img": "https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw5fcee1a7/images/Spring2021/diff_pineapple_SP2_0_vn.jpg",
+      "name": "WALLFLOWERS" 
+    },
+    {
+      "img": "https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwbc1e31b1/images/Spring2021/sp_fiji-white-sands_SP2_0_vn.jpg",
+      "name": "HAND SOAPS" 
+    },
+    {
+      "img": "https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwcb324e2c/images/Spring2021/sn_Watermelon-lemon_SP1_0_vn.jpg",
+      "name": "HAND SANITIZERS" 
+    },
+    {
+      "img": "https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw097db0bd/images/Spring2021/xcat_viz-nav_SP2_0_vn.jpg",
+      "name": "NEW ARRIVALS" 
+    }
+  ],
+  "atBodyWorks": [
+    {
+      "img": "https://cdn.dashhudson.com/media/640/1615129222.794697817638.jpeg"
+    },
+    {
+      "img": "https://cdn.dashhudson.com/media/640/1615061371.847655576464.jpeg"
+    },
+    {
+      "img": "https://cdn.dashhudson.com/media/640/1615042821.94612465747.jpeg"
+    },
+    {
+      "img": "https://cdn.dashhudson.com/media/640/1614974440.123312752487.jpeg"
+    },
+    {
+      "img": "https://cdn.dashhudson.com/media/640/1614963621.837196626827.jpeg"
+    },
+    {
+      "img": "https://cdn.dashhudson.com/media/640/1614888025.12768948424.jpeg"
+    },
+    {
+      "img": "https://cdn.dashhudson.com/media/640/1614870068.1627989152.jpeg"
+    },
+    {
+      "img": "https://cdn.dashhudson.com/media/640/1614804785.351962846909.jpeg"
+    }
   ]
 }

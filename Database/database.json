@@ -1,9 +1,46 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "offer": [
+    {
+      "id":1,
+      "name": "Wallflowers Fragrance Refills",
+      "offerPrice": "$3.95",
+      "Description": ""
+    },
+    {
+      "id":2,
+      "name": "Single Wick Candles",
+      "offerPrice": "2/$20",
+      "Description": ""
+    },
+    {
+      "id":3,
+      "name": "Select Body Care",
+      "offerPrice": "Buy 3, Get 2 Free",
+      "Description": "Lowest-priced items are free"
+    },
+    {
+      "id":4,
+      "name": "Hand Soaps",
+      "offerPrice": "6/$26 or 4/$20",
+      "Description": ""
+    },
+    {
+      "id":4,
+      "name": "Hand Sanitizer 5-Packs",
+      "offerPrice": "$8",
+      "Description": ""
+    },
+    {
+      "id":5,
+      "name": "Trial Size",
+      "offerPrice": "But 2, Get 1 FREE",
+      "Description": "Lowest-priced items are free"
+    },
+    {
+      "id":6,
+      "name": "Room Sprays",
+      "offerPrice": "3/$20",
+      "Description": ""
+    }
+  ]
+}

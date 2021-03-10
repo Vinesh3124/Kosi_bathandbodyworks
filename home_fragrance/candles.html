@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,16 +53,45 @@
             </div>
         </div>
         <div id="candle-right">
-            
+
         </div>
     </div>
 
 
     <script>
-        
+        fetch('http://localhost:3000/candle')
+
+            .then(function (response) {
+                response.json().then(function (res) {
+                    console.log(res)
+
+                    let html = ""
+                    for (i in res) {
+                        let img = res[i].img
+                        let title = res[i].title
+                        let name = res[i].name
+                        let subname = res[i].sub-name
+                        let Price = res[i].Price
+                        html += `
+                       
+          
+                <div id="candlediv">
+                    <img src="${img}" class="img" alt="">
+                    <p class="secondPara">${title}</p>
+                    <p class="thirdPara">${name}</p>
+                    <p class="secondPara">${subname}</p>
+                    <p class="thirdPara">${Price}</p>
+                <button class="btnCandle">ADD TO BAG</button>
+            </div>`
+                    }
+                    document.getElementById("candle-right").innerHTML = html
+                })
+            })
+
     </script>
 
 </body>
 
 </html>
+
 </html>

@@ -262,6 +262,22 @@ footer{
 #mrgn{
     margin-top: 15%;
 }
-/* #nomrgn{
-    margin-top: -5%;
-} */
+#products{
+    border-bottom: 1px solid black;
+}
+#paras{
+    max-width: 75%;
+    padding: 3%;
+    line-height: 170%;
+}
+#paras>p,#paras>ul>li{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+}
+#paras>:nth-child(1){
+    font-family: 'Open Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 200;
+    /* opacity: 0.5%; */
+}

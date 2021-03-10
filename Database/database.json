@@ -202,7 +202,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwbce07eba/crop/026234484_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"3-Wick Candle",
+      "subname":"3-Wick Candle",
       "Price": "$24.50"
     },
     {
@@ -210,7 +210,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwafd2f31b/crop/026234485_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Passionfruit &  Banana Flower",
-      "sub-name":"3-Wick Candle",
+      "subname":"3-Wick Candle",
       "Price": "$24.50"
     },
     {
@@ -218,7 +218,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwbcaf3f2f/crop/026234487_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Orange Pineapple Punch",
-      "sub-name":"3-Wick Candle",
+      "subname":"3-Wick Candle",
       "Price": "$24.50"
     },
      {
@@ -226,23 +226,23 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6c81cafc/crop/026234486_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Island Margarita",
-      "sub-name":"3-Wick Candle",
+      "subname":"3-Wick Candle",
       "Price": "$24.50"
     },
     {
       "id":5,
-      "img":"https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw7956c768/images/Spring2021/cndl_checklist_SP1_0_gpt.gif",
-      "title":".",
-      "name": ".",
-      "sub-name":".",
-      "Price": "."
+      "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw87401270/crop/026242906_crop.jpg?sw=500&sh=600&sm=fit&q=75",
+      "title":"New",
+      "name": "Tropical Spice",
+      "subname":"3-Wick Candle",
+      "Price": "$16.50"
     },
     {
       "id":6,
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw627bc82a/crop/026234488_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "SunKissed Coconut",
-      "sub-name":"3-Wick Candle",
+      "subname":"3-Wick Candle",
       "Price": "$24.50"
     },
      {
@@ -250,7 +250,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dweb71671f/crop/026234489_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Emerald Waters",
-      "sub-name":"3-Wick Candle",
+      "subname":"3-Wick Candle",
       "Price": "$24.50"
     },
     {
@@ -258,7 +258,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw0ded216f/crop/026242802_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
       "Price": "$14.50"
     },
     {
@@ -266,16 +266,16 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwf5b0edc0/crop/026242803_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Passionfruit & Banana Flower",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
       "Price": "$14.50"
     },
     
     {
       "id":10,
-      "img":"https://www.bathandbodyworks.com/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw4f92f358/images/Spring2021/cndl_single-wick-checklist_SP2_0_gpt.gif",
+      "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwe09c0740/crop/026235804_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New",
       "name": "Emered Waters",
-      "sub-name":"3-Wick waters",
+      "subname":"3-Wick waters",
       "Price": "$24.50"
     },
     {
@@ -283,7 +283,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw62467373/crop/026242804_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
       "Price": "$24.50"
     },
   {
@@ -291,7 +291,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwb080e60f/crop/026242807_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
       "Price": "$14.50"
     },
     {
@@ -299,7 +299,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw4ad2579a/crop/026242805_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
       "Price": "$14.50"
     },
     {
@@ -307,7 +307,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw9eab7d02/crop/026241597_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
       "Price": "$14.50"
     },
     {
@@ -315,7 +315,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwffc75eb5/crop/026236589_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
       "Price": "$34.50"
     },
    {
@@ -323,7 +323,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwa67e25fa/crop/026234479_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
       "Price": "$24.50"
     },
     {
@@ -331,7 +331,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw350a5d13/crop/026234480_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
       "Price": "$44.50"
     },
 {
@@ -339,7 +339,7 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw0956a38c/crop/026206954_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
       "Price": "$34.50"
     },
     {
@@ -347,7 +347,47 @@
       "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw51bdbeeb/crop/026233706_crop.jpg?sw=500&sh=600&sm=fit&q=75",
       "title":"New!",
       "name": "Waikiki Beach Coconut",
-      "sub-name":"Single Wick Candle",
+      "subname":"Single Wick Candle",
+      "Price": "$34.50"
+    },
+    {
+      "id":20,
+      "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc3f9dbcc/crop/026242827_crop.jpg?sw=500&sh=600&sm=fit&q=75",
+      "title":"New!",
+      "name": "Waikiki Beach Coconut",
+      "subname":"Single Wick Candle",
+      "Price": "$24.50"
+    },
+  {
+      "id":21,
+      "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw56219377/crop/026236587_crop.jpg?sw=500&sh=600&sm=fit&q=75",
+      "title":"New!",
+      "name": "Waikiki Beach Coconut",
+      "subname":"Single Wick Candle",
+      "Price": "$14.50"
+    },
+    {
+      "id":22,
+      "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw05470532/crop/026235803_crop.jpg?sw=500&sh=600&sm=fit&q=75",
+      "title":"New!",
+      "name": "Waikiki Beach Coconut",
+      "subname":"Single Wick Candle",
+      "Price": "$14.50"
+    },
+    {
+      "id":23,
+      "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwafa4dfe1/crop/026227399_crop.jpg?sw=500&sh=600&sm=fit&q=75",
+      "title":"New!",
+      "name": "Waikiki Beach Coconut",
+      "subname":"Single Wick Candle",
+      "Price": "$14.50"
+    },
+    {
+      "id":24,
+      "img":"https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw07cd1806/crop/026237002_crop.jpg?sw=500&sh=600&sm=fit&q=75",
+      "title":"New!",
+      "name": "Waikiki Beach Coconut",
+      "subname":"Single Wick Candle",
       "Price": "$34.50"
     }
 ]

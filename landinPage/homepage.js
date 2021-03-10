@@ -23,7 +23,7 @@ function setImageTime(){
         image.src = img[currentPos];
     }
 
-    var timeImage = setInterval(volgendefoto, 3000);
+    var timeImage = setInterval(volgendefoto, 2000);
 
     document.getElementById("pBtn").addEventListener("click", stopTimmer)
 
@@ -38,7 +38,7 @@ function setImageTime(){
         }
         if(Btncount == 0){
             console.log("Play")
-            timeImage = setInterval(volgendefoto, 3000)
+            timeImage = setInterval(volgendefoto, 2000)
         }
         if(Btncount == 1){
             console.log("Pause")
@@ -57,6 +57,10 @@ window.addEventListener("load", getOfferData)
 function getOfferData(){
 
     let pageCount = 1
+    if(pageCount == 1){
+        document.getElementById("leftOfferBtn").style.display = "none"
+        document.getElementById("rightOfferBtn").style.display = "block"
+    }
 
     document.getElementById("rightOfferBtn").addEventListener("click", function(){
         pageCount++
@@ -177,7 +181,7 @@ function getNewProducts(){
                     <p class="card_info_para_desc">${shr_Desc}</p>
                 </div>
                 <button class="card_AddCartBtn">ADD TO BAG</button>
-                <div class="flat" id="quickViewDiv" onmouseover="quickViewIn(${id})" onmouseout="quickViewOut(${id})">
+                <div class="flat" id="quickViewDiv" onclick="getProductDetails(${id})" onmouseover="quickViewIn(${id})" onmouseout="quickViewOut(${id})">
                     <i class="fas fa-eye">
                         <p>Quicklook</p>
                     </i>
@@ -188,6 +192,10 @@ function getNewProducts(){
         document.getElementById("displayProduct").innerHTML = html
     }
 
+}
+
+function getProductDetails(val){
+    console.log(val)
 }
 
 function quickViewIn(val){
@@ -272,6 +280,11 @@ window.addEventListener("load", getBodyWorkData)
 function getBodyWorkData(){
 
     let pageCount = 1
+
+    if(pageCount == 1){
+        document.getElementById("leftOfferBtn1").style.display = "none"
+        document.getElementById("rightOfferBtn1").style.display = "block"
+    }
 
     document.getElementById("rightOfferBtn1").addEventListener("click", function(){
         pageCount++

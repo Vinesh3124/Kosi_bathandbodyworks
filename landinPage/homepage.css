@@ -1,5 +1,6 @@
 body{
     margin: 0%;
+    font-family: 'Gothic A1', sans-serif;
 }
 
 #timeoutImage{
@@ -342,7 +343,7 @@ img{
     border-radius: 50%;
     display: none;
     background-color: whitesmoke;
-    opacity: 0.5
+    opacity: 0.8
 }
 
 #quickViewDiv>i{
@@ -531,4 +532,19 @@ img{
 
 #instaImage{
     font-size: 25px;
+}
+
+.bottomDesc{
+    width: 60%;
+    height: 250px;
+    /* border-bottom: 1px solid;
+    border-top: 1px solid; */
+    text-align: center;
+    margin: auto;
+    margin-bottom: 5%;
+    line-height: 25px;
+}
+
+.bottomDesc>h1{
+    margin-top: 5%;
 }

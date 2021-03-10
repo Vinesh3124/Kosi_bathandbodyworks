@@ -193,10 +193,64 @@ function getNewProducts(){
     }
 
 }
-
+//===============================================Product view Modal======================================================
 function getProductDetails(val){
-    console.log(val)
+    let id = val
+    modal.style.display = "block"
+    fetch(`http://localhost:3000/Fresh?id=${id}`).then(response => response.json()).then(data => displayModalData(data)).catch(error => console.log(error))
+
+    function displayModalData(data){
+        console.log(data)
+        let name = data[0].name
+        let desc = data[0].Description
+        let price = data[0].Price
+        let shrt_desc = data[0].Short_Description
+        let img = data[0].img
+        let html = ""
+
+        html+= `
+        <div class="displayModalCont">
+            <div class="displayModalCont_img">
+                <img src="${img}" class="img" alt="">
+            </div>
+            <div class="displayModalCont_info">
+                <div class="displayModalCont_info_name">
+                    <strong>${name}</strong>
+                    <p>${shrt_desc}</p>
+                </div>
+                <div class="displayModalCont_info_desc">${desc}</div>
+                <div class="displayModalCont_info_price">$${price}</div>
+                <div class="displayModalCont_info_btn">
+                        <div class="displayModalCont_info_btn_count">
+                            <button id="minusBtn">-</button>
+                            <p id="numValue">0</p>
+                            <button id="plusBtn">+</button>
+                        </div>
+                    <button class="displayModalCont_info_btn_cart">ADD TO BAG</button>
+                </div>
+            </div>
+        </div>
+        `
+
+        document.getElementById("DisplayModalProductData").innerHTML = html
+    }
 }
+
+var modal = document.getElementById("myModal");
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+//------------------------------------------------------------------------------------------------------------
 
 function quickViewIn(val){
     let id = val

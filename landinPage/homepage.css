@@ -140,7 +140,7 @@ img{
     margin: auto;
     /* border: 1px solid black; */
     margin-top: 8%;
-    line-height: 30px;
+    line-height: 16px;
     text-align: center;
 }
 
@@ -208,22 +208,22 @@ img{
 .cursive{
     font-family: 'Lovers Quarrel', cursive;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     font-weight:bold;
     color: #353535;
 }
 
 .normal_Title{
     text-align: center;
-    font-size: 23px;
+    font-size: 20px;
     letter-spacing: 2px;
     word-spacing: 5px;
 }
 
 .normal_Descp{
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
-    margin-left: 2%;
+    /* margin-left: 2%; */
     color: #666666;
 }
 
@@ -235,7 +235,7 @@ img{
 .productInfoCaro_Title{
     /* border: 1px solid; */
     margin-left: 2%;
-    line-height: 25px;
+    line-height: 5px;
 }
 
 .displayProductItemDiv{
@@ -243,12 +243,12 @@ img{
     height: 75%;
     /* border: 1px solid; */
     margin-top: 1%;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     display: flex;
 }
 
 .shopNewLink{
-    margin-left: 38%;
+    margin-left: 35%;
     color: black;
     /* border: 1px solid; */
 }
@@ -349,7 +349,7 @@ img{
 #quickViewDiv>i{
     /* border: 1px solid; */
     text-align: center;
-    margin-top: 25%;
+    margin-top: 13%;
     margin-left: 10%;
     color: black;
 }
@@ -366,7 +366,7 @@ img{
     /* border-top: 1px solid; */
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 .hompageMidPoster_card{
@@ -384,7 +384,7 @@ img{
 }
 
 .hompageMidPoster_card_info{
-    line-height: 25px;
+    line-height: 10px;
 }
 
 .hompageMidPoster_card_info>p{
@@ -458,7 +458,7 @@ img{
 }
 
 .dashedBar1_1{
-    width: 35%;
+    width: 30%;
     margin-top: 2%;
 }
 
@@ -472,7 +472,7 @@ img{
 }
 
 .dashedBar2_2{
-    width: 35%;
+    width: 30%;
     margin-top: 2%;
 }   
 
@@ -482,8 +482,9 @@ img{
 }
 
 .dashedBar_text1{
-    width: 30%;
+    width: 35%;
     /* border: 1px solid; */
+    line-height: 0.5%;
 }
 
 #shopByCata{
@@ -547,4 +548,140 @@ img{
 
 .bottomDesc>h1{
     margin-top: 5%;
+}
+
+/* =====================================================================Modal============================================= */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 20px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+  
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.displayModalCont{
+    width: 100%;
+    height: 480px;
+    /* border: 1px solid black; */
+    margin: auto;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+.displayModalCont_img{
+    width: 40%;
+    height: 80%;
+    /* border-right: 1px solid violet; */
+}
+
+.displayModalCont_info{
+    width: 60%;
+    height: 100%;
+}
+
+.displayModalCont_info_name{
+    width: 80%;
+    height: 12%;
+    margin-top: 10%;
+    /* border: 1px solid; */
+}
+
+.displayModalCont_info_desc, .displayModalCont_info_price, .displayModalCont_info_btn{
+    width: 100%;
+    height: 36%;
+    /* border: 1px solid; */
+    margin-top: 2%;
+}
+
+.displayModalCont_info_price{
+    height: 12%;
+}
+
+.displayModalCont_info_btn{
+    height: 20%;
+    margin-top: 5%;
+    display: flex;
+}
+
+.displayModalCont_info_btn_count, .displayModalCont_info_btn_cart{
+    width: 30%;
+    height: 40px;
+    /* border: 1px solid black; */
+    margin-top: 6%;
+    margin-left: 8%;
+    display: flex;
+    background-color: #F2F2F2;
+
+}
+
+.displayModalCont_info_btn_cart{
+    display: block;
+    margin-left: 2%;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+}
+
+.displayModalCont_info_btn_cart:hover{
+    background-color: #F2F2F2;
+    border: 1px solid #F2F2F2;
+    color: black;
+}
+
+#minusBtn:hover, #plusBtn:hover{
+    background-color: black;
+    border: 1px solid;
+    color: white;
+}
+
+#minusBtn, #plusBtn{
+    width: 35%;
+    height: 100%;
+    background-color: #F2F2F2;
+    border: 1px solid #b3b3b3;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#numValue{
+    width: 30%;
+    height: 60%;
+    text-align: center;
+    vertical-align: middle;
+    /* border: 1px solid black; */
+    margin-top: 6%;
+    font-weight: bold;
+    background-color: #F2F2F2;
 }

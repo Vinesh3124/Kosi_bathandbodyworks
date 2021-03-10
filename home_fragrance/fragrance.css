@@ -52,32 +52,35 @@ button {
     /* border: 1px solid cyan */
 }
 
-a {
+#left-cont a {
     text-decoration: none;
     color: gray;
     font-size: 15px;
 }
 
-a:hover {
+#left-cont a:hover {
     color: blue;
 }
-button:hover{
+
+button:hover {
     background-color: rgb(29, 26, 26);
     color: white;
 }
-#title{
+
+#title {
     font-size: 25px;
-    color:gray;
+    color: gray;
 }
-#p{
-    width: 100%; 
-    text-align: center; 
-    border-bottom: 1px solid #000; 
+
+#p {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
     line-height: 0.1em;
-    margin: 10px 0 20px; 
- } 
- 
- P span { 
-     background:#fff; 
-     padding:0 10px; 
- }
+    margin: 10px 0 20px;
+}
+
+P span {
+    background: #fff;
+    padding: 0 10px;
+}

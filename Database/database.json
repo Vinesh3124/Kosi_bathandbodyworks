@@ -50,6 +50,8 @@
       "name": "IMAGES WAIKIKI BEACH COCONUT",
       "Short_Description": "3-Wick Candle",
       "Price": "24.50",
+      "count": 1,
+      "totalP": 0,
       "Description": "The scent of Tropical White Coconut, Saltwater Breezes & Sun-Bleached Woods in the room-filling fragrance of our 3-Wick Candle with Essential Oils"
     },
     {
@@ -58,6 +60,8 @@
       "name": "PINEAPPLE SUCCULENT",
       "Short_Description": "Wallflower Fragrance Plug",
       "Price": "14.50",
+      "count": 1,
+      "totalP": 0,
       "Description": "This sweet plug's what you get when tropical décor goes boho. Pair with your favorite Wallflowers Fragrance Refill!"
     },
     {
@@ -66,6 +70,8 @@
       "name": "WAIKIKI BEACH COCONUT",
       "Short_Description": "Wallflowers Fragrance Refill",
       "Price": "3.95",
+      "count": 1,
+      "totalP": 0,
       "Description": "Home fragrance that lasts for weeks and weeks! Pair with a Wallflowers plug and enjoy the scent of Tropical White Coconut, Saltwater Breezes & Sun-Bleached Woods with Essential Oils"
     }, 
     {
@@ -74,6 +80,8 @@
       "name": "BELIZE TROPICAL CABANA",
       "Short_Description": "Shower Gel",
       "Price": "13.50",
+      "count": 1,
+      "totalP": 0,
       "Description": "A sweet blend of banana daiquiri, juicy pineapple and golden sands in a rich, bubbly lather lets you get adventurous in the vivid landscapes of Central America."
     }, 
     {
@@ -82,6 +90,8 @@
       "name": "WAIKIKI BEACH COCONUT",
       "Short_Description": "Single Wick Candle",
       "Price": "14.50",
+      "count": 1,
+      "totalP": 0,
       "Description": "The scent of Tropical White Coconut, Saltwater Breezes & Sun-Bleached Woods in the room-filling fragrance of our Single Wick Candle with Essential Oils"
     }, 
     {
@@ -90,6 +100,8 @@
       "name": "WAIKIKI BEACH COCONUT",
       "Short_Description": "Hand Cream",
       "Price": "6.50",
+      "count": 1,
+      "totalP": 0,
       "Description": "A breezy blend of tropical white coconut, saltwater breezes and sun-bleached woods in our deeply moisturizing hand cream that takes you to the shores of one of the world's most beautiful beaches."
     }, 
     {
@@ -98,6 +110,8 @@
       "name": "WAIKIKI BEACH COCONUT",
       "Short_Description": "Ultra Shea Body Cream",
       "Price": "14.50",
+      "count": 1,
+      "totalP": 0,
       "Description": "A breezy blend of tropical white coconut, saltwater breezes and sun-bleached woods in our 24-hour moisturizing cream that takes you to the shores of one of the world's most beautiful beaches."
     },
     {
@@ -106,6 +120,8 @@
       "name": "HONOLULU SUN",
       "Short_Description": "Gentle Foaming Hand Soap",
       "Price": "7.50",
+      "count": 1,
+      "totalP": 0,
       "Description": "A dreamy blend of fresh island coconut, Pacific palm & driftwood in our luxurious foaming soap"
     },
     {
@@ -114,6 +130,8 @@
       "name": "BAHAMAS PASSIONFRUIT & BANANA FLOWER",
       "Short_Description": "Fine Fragrance Mist",
       "Price": "15.50",
+      "count": 1,
+      "totalP": 0,
       "Description": "A fruity blend of passionfruit, pineapple leaves and banana flower in our irresistible, long-lasting mist for island hopping where the beaches are stunning and the waters are crystal clear."
     }
   ],

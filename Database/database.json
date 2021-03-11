@@ -115,9 +115,11 @@
       "Short_Description": "Fine Fragrance Mist",
       "Price": "15.50",
       "Description": "A fruity blend of passionfruit, pineapple leaves and banana flower in our irresistible, long-lasting mist for island hopping where the beaches are stunning and the waters are crystal clear."
-    },
+    }
+  ],
+  "new_body" : [
     {
-      "id":19,
+      "id":1,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwbd8156d8/hires/026205663.jpg?sh=471",
       "name": "WAIKIKI BEACH COCONUT",
       "Short_Description": "Shower Gel",
@@ -126,7 +128,7 @@
       "Description": "A breezy blend of tropical white coconut, saltwater breezes and sun-bleached woods that takes you to the shores of one of the world's most beautiful beaches"
     },
     {
-      "id":20,
+      "id":2,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw2f431751/hires/026205672.jpg?sh=471",
       "name": "BAHAMAS PASSIONFRUIT & BANANA FLOWER",
       "Short_Description": "Fine Fragrance Mist",
@@ -135,7 +137,7 @@
       "Description": "A fruity blend of passionfruit, pineapple leaves and banana flower for island hopping where the beaches are stunning and the waters are crystal clear."
     },
     {
-      "id":21,
+      "id":3,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw3da3d5a1/hires/026206403.jpg?sh=471",
       "name": "HIBISCUS PARADISE",
       "Short_Description": "Ultra Shea Body Cream",
@@ -144,7 +146,7 @@
       "Description": "Let pink hibiscus, juicy guava and coconut take you to your personal tropical oasis."
     },
     {
-      "id":22,
+      "id":4,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwe9e188bf/hires/026208719.jpg?sh=471",
       "name": "KEY WEST COCONUT WATER & MELON",
       "Short_Description": "Super Smooth Body Lotion",
@@ -152,7 +154,7 @@
       "count":"1",
       "Description": "Relax with this fresh blend of coconut water, saltwater waves and fresh melon and take in the breathtaking sunset of a summer night in the Florida Keys."
     },{
-      "id":23,
+      "id":5,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw7f76627c/hires/026205675.jpg?sh=471",
       "name": "WAIKIKI BEACH COCONUT",
       "Short_Description": "Ultra Shea Body Cream",
@@ -161,7 +163,7 @@
       "Description": "A breezy blend of tropical white coconut, saltwater breezes and sun-bleached woods that takes you to the shores of one of the world's most beautiful beaches."
     },
     {
-      "id":24,
+      "id":6,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwd5259d70/hires/026205671.jpg?sh=471",
       "name": "WAIKIKI BEACH COCONUT",
       "Short_Description": "Fine Fragrance Mist",
@@ -170,7 +172,7 @@
       "Description": "A breezy blend of tropical white coconut, saltwater breezes and sun-bleached woods that takes you to the shores of one of the world's most beautiful beaches."
     },
     {
-      "id":25,
+      "id":7,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc8eb7b7e/hires/026205667.jpg?sh=471",
       "name": "WAIKIKI BEACH COCONUT",
       "Short_Description": "Super Smooth Body Lotion",
@@ -179,7 +181,7 @@
       "Description": "A breezy blend of tropical white coconut, saltwater breezes and sun-bleached woods that takes you to the shores of one of the world's most beautiful beaches."
     },
     {
-      "id":26,
+      "id":8,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5858f152/hires/026204504.jpg?sh=471",
       "name": "WAIKIKI BEACH COCONUT",
       "Short_Description": "Sand & Sea Salt Body Scrub",
@@ -188,7 +190,7 @@
       "Description": "A breezy blend of tropical white coconut, saltwater breezes and sun-bleached woods that takes you to the shores of one of the world's most beautiful beaches."
     },
     {
-      "id":27,
+      "id":9,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwe1551dc0/hires/026204501.jpg?sh=471",
       "name": "BAHAMAS PASSIONFRUIT & BANANA FLOWER",
       "Short_Description": "Moisturizing Body Wash",
@@ -197,7 +199,7 @@
       "Description": "A fruity blend of passionfruit, pineapple leaves and banana flower for island hopping where the beaches are stunning and the waters are crystal clear."
     },
     {
-      "id":28,
+      "id":10,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw21cc1b4a/hires/026204505.jpg?sh=471",
       "name": "BAHAMAS PASSIONFRUIT & BANANA FLOWER",
       "Short_Description": "Sand & Sea Salt Body Scrub",
@@ -206,7 +208,7 @@
       "Description": "A fruity blend of passionfruit, pineapple leaves and banana flower for island hopping where the beaches are stunning and the waters are crystal clear."
     },
     {
-      "id":29,
+      "id":11,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwbbd18c69/hires/026239837.jpg?sh=471",
       "name": "HIBISCUS PARADISE",
       "Short_Description": "Eau de Parfum",
@@ -215,7 +217,7 @@
       "Description": "Let pink hibiscus, juicy guava and coconut take you to your personal tropical oasis."
     },
     {
-      "id":30,
+      "id":12,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dweaa3da7e/hires/026206405.jpg?sh=471",
       "name": "HIBISCUS PARADISE",
       "Short_Description": "Shower Gel",
@@ -224,7 +226,7 @@
       "Description": "Let pink hibiscus, juicy guava and coconut take you to your personal tropical oasis."
     },
     {
-      "id":31,
+      "id":13,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw8833abfa/hires/026203499.jpg?sh=471",
       "name": "HIBISCUS PARADISE",
       "Short_Description": "Fine Fragrance Mist",
@@ -232,7 +234,7 @@
       "count":"1",
       "Description": "Let pink hibiscus, juicy guava and coconut take you to your personal tropical oasis."
     },{
-      "id":32,
+      "id":14,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc9a7a78c/hires/026206401.jpg?sh=471",
       "name": "HIBISCUS PARADISE",
       "Short_Description": "Super Smooth Body Lotion",
@@ -240,7 +242,7 @@
       "count":"1",
       "Description": "Let pink hibiscus, juicy guava and coconut take you to your personal tropical oasis."
     },{
-      "id":33,
+      "id":15,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw8baa165f/hires/026207885.jpg?sh=471",
       "name": "HIBISCUS PARADISE",
       "Short_Description": "Creamy Body Scrub",
@@ -248,7 +250,7 @@
       "count":"1",
       "Description": "Let pink hibiscus, juicy guava and coconut take you to your personal tropical oasis."
     },{
-      "id":34,
+      "id":16,
       "img": "https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw80d50391/hires/026206407.jpg?sh=471",
       "name": "HIBISCUS PARADISE",
       "Short_Description": "Moisturizing Body Wash",

@@ -35,7 +35,6 @@ function displayCartFun(data){
     <div id="cartProductDetails">
         <div class="cartProductDetails_check">
             <div><p id="cartProductDetails_check_para">ITEMS IN SHOPPING BAG</p></div>
-            <button id="checkOutBtn" onclick="paymentModal()">CHECKOUT</button>
         </div>
         <div id="cartProductDetails_check_items"></div>
     </div>
@@ -53,7 +52,8 @@ function displayCartFun(data){
     </tr>
     `
     let totalPrice = 0
-    let amount = 0
+    var totalProduct = 0
+    var amount = 0
     for(let i in data){
         let name = data[i].name
         let id = data[i].id
@@ -61,7 +61,7 @@ function displayCartFun(data){
         let img = data[i].img
         let desc = data[i].desc
         let Pcount = data[i].count
-
+        totalProduct+= Number(Pcount) 
         if(Pcount < 1){
             removeItemLs(id)
         }
@@ -111,8 +111,8 @@ function displayCartFun(data){
     // let fprice = totalPrice
     let tax = 10/100
     let taxAmount = totalPrice * tax
-    let finaltax = taxAmount.toFixed(2)
-    let total = Number(amount)+Number(finaltax)+5.99
+    var finaltax = taxAmount.toFixed(2)
+    var total = (Number(amount)+Number(finaltax)+5.99).toFixed(2)
     console.log(typeof(finaltax))
     // console.log(total)
     btmHtml=`
@@ -148,9 +148,9 @@ function displayCartFun(data){
             <div class="cart_Dash"></div>
             <div class="price_cart4">
                 <div>ORDER TOTAL (USD)</div>
-                <div>$${total.toFixed(2)}</div>
+                <div>$${total}</div>
             </div>
-            <button id="checkOutBtn1" onclick="paymentModal()">CHECKOUT</button>
+            <button id="checkOutBtn1" onclick="paymentModal(${amount}, ${finaltax}, ${total}, ${totalProduct})">CHECKOUT</button>
             <div class="price_cart6">
                 <div>International Shoppers</div>
             </div>
@@ -183,13 +183,40 @@ function refreshCart(){
     getLsData()
 }
 
-function paymentModal(){
-    let html = ""
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
-    var span = document.getElementsByClassName("close")[0];
+function paymentModal(amount, finaltax, total, totalProduct){
+    let user = localStorage.getItem("user")
+
+    if(user === null){
+        alert("Login")
+    }
+    else{
+        let info = JSON.parse(user)
+        let fname = info.fname
+        let lname = info.lname
+        let city = info.city
+        let email = info.email
+        let password = info.password
+        let phone = info.phone
+        let state = info.state
+        let street = info.street
+        let zipcode = info.zipcode
+
+        let html = ""
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+        var span = document.getElementsByClassName("close")[0];
     
-    html+= `
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        html+= `
         <div class="cartPayment">
             <div class="cartPayment_Loading">
                 <img src="https://media2.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" class="img" alt="">
@@ -198,19 +225,61 @@ function paymentModal(){
                 <strong>Processing your order, Please wait!!!</strong>
             </div>
         </div>
-    `
+        `
+
+        document.getElementById("displayPaymentModal").innerHTML = html
+
+        setTimeout(function(){
+            let cHtml = ""
+            cHtml+= `
+            <div class="paymentInfo">                
+            <div class="paymentInfo_add">
+                <h1>ORDER SUMMARY</h1>
+                <p><strong>Name: </strong> ${fname} ${lname}</p>
+                <p><strong>Delivery Address:</strong> ${street}, ${city}, ${state}, ${zipcode}</p>
+                <p><strong>Email: </strong> ${email}</p>
+                <p><strong>Phone: </strong> ${phone}</p>
+                <strong>Select payment method</strong>
+                <select id="cust" onchange="SetSelectedValue()" >
+                    <option value="1">Select Payment Mode</option>
+                    <option value="DEBIT CARD">Debit Card</option>
+                    <option value="CREDIT CARD">Credit Card</option>
+                    <option value="NET BANKING">Net Banking</option>
+                    <option value="CASH ON DELIVERY">Cash On Delivery</option>
+                </select>
+            </div>
+            <div class="paymentInfo_OrderSumm">
+                <p><strong>Total Product:</strong> ${totalProduct}</p>
+                <p><strong>Total Amount:</strong> $${amount}</p>
+                <p><strong>Delivery Amount:</strong> $5.99</p>
+                <p><strong>Sales Tax:</strong> $${finaltax}</p>
+                <p><strong>Fianl Amount:</strong> $${total}</p>
+                <button id="payBtn" onclick="processPayment()">Pay Now</button>
+            </div>
+            </div>
+            `
+            document.getElementById("displayPaymentModal").innerHTML = cHtml
+        },2000)
+
+    }
+}
+
+function processPayment(){
+
+    let html = ""
+
+    html+= `
+    <div class="cartPayment">
+        <div class="cartPayment_Loading">
+            <img src="https://i.gifer.com/BAxY.gif" class="img" alt="">
+        </div>
+        <div class="cartPayment_text">
+            <strong>Placing your order, Please wait!!!</strong>
+        </div>
+    </div>
+`
 
     document.getElementById("displayPaymentModal").innerHTML = html
-
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-        modal.style.display = "none";
-        }
-    }
 
     setTimeout(function(){
         let pHtml = ""
@@ -225,10 +294,13 @@ function paymentModal(){
         </div>
         `
         document.getElementById("displayPaymentModal").innerHTML = pHtml
-        localStorage.clear()
+        localStorage.removeItem("cart")
         getLsData()
-    }, 3000)
+    }, 4000)
 }
+
+
+
 
 async function removeItemCart(val){
     let data = localStorage.getItem("cart")
@@ -255,3 +327,14 @@ function addItemCart(val){
     localStorage.setItem("cart", JSON.stringify(data))
     getLsData()
 }
+
+// window.addEventListener("load", function(){
+//     let user = localStorage.getItem("user")
+
+//     if(user === null){
+//         alert("Login")
+//     }
+//     else{
+//         alert("GOOD")
+//     }
+// })

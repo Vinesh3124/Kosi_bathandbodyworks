@@ -355,7 +355,6 @@
       "img": "https://cdn.dashhudson.com/media/640/1614804785.351962846909.jpeg"
     }
   ],
-
   "candle": [
     {
       "id":1,
@@ -550,7 +549,55 @@
       "subname":"Single Wick Candle",
       "Price": "$34.50"
     }
-]
-
-
+  ],
+  "users": [
+    {
+      "id": 501,
+      "Fname": "Lorinda",
+      "Lname": "Reid",
+      "street":"1176 Jacobs Street",
+      "city":"Philadelphia",
+      "state":"PA",
+      "zipcode": 19146,
+      "email":"LorindaDReid@jourrapide.com",
+      "phone": "215-882-8665",
+      "password": "lorinda123"
+    },
+    {
+      "id": 502,
+      "Fname": "Joan",
+      "Lname": "Stanton",
+      "street":"2123 Selah Way",
+      "city":"Gloucester",
+      "state":"Virginia",
+      "zipcode": 23061,
+      "email":"thad1979@hotmail.com",
+      "phone": "804-699-0434",
+      "password": "joan123"
+    },
+    {
+      "id": 503,
+      "Fname": "Leslie",
+      "Lname": "Jones",
+      "street":"4082 Mattson Street",
+      "city":"New York",
+      "state":"New York",
+      "zipcode": 10036,
+      "email":"darlene.gutkows@hotmail.com",
+      "phone": "212-768-7159",
+      "password": "leslie123"
+    },
+    {
+      "id": 504,
+      "Fname": "Derrick",
+      "Lname": "Chan",
+      "street":"2615 Buffalo Creek Road",
+      "city":"Nashville",
+      "state":"Tennessee",
+      "zipcode": 37211,
+      "email":"felicia2005@gmail.com",
+      "phone": "615-837-5090",
+      "password": "derrick123"
+    }
+  ]
 }

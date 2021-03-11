@@ -694,10 +694,10 @@ img{
     display: flex;
 }
 
-.cartAdd>h3{
+/* .cartAdd>h3{ */
     /* border: 1px solid; */
     /* margin-left: 10%; */
-}
+/* } */
 
 .imageBox{
     width: 60px;

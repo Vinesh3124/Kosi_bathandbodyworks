@@ -457,3 +457,44 @@ body{
     text-align: center;
     letter-spacing: 2px;
 }
+
+.paymentInfo{
+    width: 90%;
+    height: 350px;
+    /* border: 1px solid; */
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    display: flex;
+}
+
+.paymentInfo_add{
+    width: 75%;
+    /* height: 30px; */
+    border-right: 1px solid;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.paymentInfo_OrderSumm{
+    width: 50%;
+    height: auto;
+    /* border: 1px solid blue; */
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+#payBtn{
+    padding: 10px;
+    width: 50%;
+    background-color: black;
+    color: white;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+#payBtn:hover{
+    background-color: rgb(192, 192, 192);
+    border: 1px solid rgb(192, 192, 192);
+    color: black;
+}

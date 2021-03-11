@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="new_body_care.css">    
-    <link rel="stylesheet" href="assets">
     <title>New body Care</title>
 </head>
 <body>
@@ -72,7 +71,85 @@
             </div>
             <div id="filter">
                 <div>
-
+                    <div>
+                        <h4>Filter By: </h4>
+                    </div>
+                    <div>
+                        <form>
+                            <div class="ptmultiselect">
+                                <div class="ptselectBox" onclick="showCheckboxes1()">
+                                    <select>
+                                        <option>PRODUCT TYPE</option>
+                                    </select>
+                                    <div class="ptoverSelect"></div>
+                                </div>
+                                <div id="ptcheckboxes">
+                                    <label for="one">
+                                      <input type="checkbox" id="one" />Body Butter & Balm</label>
+                                    <label for="two">
+                                      <input type="checkbox" id="two" />Body Cream</label>
+                                    <label for="three">
+                                      <input type="checkbox" id="three" />Body Lotion</label>
+                                    <label for="four">
+                                      <input type="checkbox" id="four" />Body Scrub</label>
+                                    <label for="five">
+                                      <input type="checkbox" id="Five" />Body Spray & Mint</label>
+                                    <label for="six">
+                                      <input type="checkbox" id="six"/>Body Wash & Shower Gel</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <form>
+                            <div class="fnmultiselect">
+                              <div class="fnselectBox" onclick="showCheckboxes2()">
+                                <select>
+                                  <option>FRAGRANCE NAME</option>
+                                </select>
+                                <div class="fnoverSelect"></div>
+                              </div>
+                              <div id="fncheckboxes">
+                                <label for="one">
+                                    <input type="checkbox" id="one" />Bergamot Cedarwood</label>
+                                  <label for="two">
+                                    <input type="checkbox" id="two" />Hibiscus Paradise</label>
+                                  <label for="three">
+                                    <input type="checkbox" id="three" />Key West Coconut Water & Melon</label>
+                                  <label for="four">
+                                    <input type="checkbox" id="four" />Sandalwood Eucalyptus</label>
+                                  <label for="five">
+                                    <input type="checkbox" id="Five" />Oahu Coconut Sunset</label>
+                                  <label for="six">
+                                    <input type="checkbox" id="six"/>Mimosa Spearmint</label>
+                              </div>                              
+                            </div>
+                          </form>
+                    </div>
+                    <div>
+                        <form>
+                            <div class="fcmultiselect">
+                              <div class="fcselectBox" onclick="showCheckboxes3()">
+                                <select>
+                                  <option>FRAGRANCE CATEGORY</option>
+                                </select>
+                                <div class="fcoverSelect"></div>
+                              </div>
+                              <div id="fccheckboxes">
+                                <label for="one">
+                                    <input type="checkbox" id="one" />Floral</label>
+                                  <label for="two">
+                                    <input type="checkbox" id="two" />Fresh</label>
+                                  <label for="three">
+                                    <input type="checkbox" id="three" />Fruity</label>
+                                  <label for="four">
+                                    <input type="checkbox" id="four" />Sweet</label>
+                                  <label for="five">
+                                    <input type="checkbox" id="Five" />Woodsy</label>
+                              </div>
+                            </div>
+                          </form>
+                    </div>
                 </div>
                 <div>
                     <select id="seclt">
@@ -89,14 +166,14 @@
                 <div class="list">
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5f13ce94/crop/026205663_crop.jpg?sw=500&sh=600&sm=fit&q=75"
-                        style="height: 60%; margin-top: 8%; width: 50%;">
+                        style="height: 60%; margin-top: 8%; width: 50%;" onmouseover="quicklook()">
                         <div>
                             <h3>Waikiki Beach Coconut</h3>
                             <p>Shower Gel</p>
                             <h3 id="mrgn" class="sort">$13.50</h3>
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         </div>
-                        <button>ADD TO BAG</button>    
+                        <button onclick="add()" id="btn1">ADD TO BAG</button>    
                         
                     </div>
                     <div>
@@ -108,7 +185,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                                 
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn2">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwaf7ca7af/crop/026206403_crop.jpg?sw=500&sh=600&sm=fit&q=75" style="height: 60%; margin-top: 8%; width: 45%;">
@@ -119,7 +196,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                                 
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn3">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5e0491b0/crop/026208719_crop.jpg?sw=500&sh=600&sm=fit&q=75"
@@ -131,7 +208,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                                 
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn4">ADD TO BAG</button>
                     </div>
                 </div>
                 <div class="list">
@@ -144,7 +221,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         </div>
                         
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn5">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw112b9228/crop/026205671_crop.jpg?sw=500&sh=600&sm=fit&q=75" style="height: 60%; margin-top: 8%; width: 35%;">
@@ -155,7 +232,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         </div>
                         
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn6">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw4cd3b24b/crop/026205667_crop.jpg?sw=500&sh=600&sm=fit&q=75" style="height: 60%; margin-top: 8%; width: 50%;">
@@ -166,7 +243,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         </div>
                         
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn7">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6f5f1177/crop/026204504_crop.jpg?sw=500&sh=600&sm=fit&q=75" style="height: 60%; margin-top: 8%; width: 65%;">
@@ -177,7 +254,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         </div>
                         
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn8">ADD TO BAG</button>
                     </div>
                 </div>
                 <div class="list">
@@ -189,7 +266,7 @@
                             <h3 id="nomrgn" class="sort">$13.50</h3>
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>    
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn9">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc63f29bc/crop/026204505_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 60%; margin-top: 8%; width: 70%;">
@@ -200,7 +277,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                             
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn10">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw63af0811/crop/026239837_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 60%; margin-top: 8%; width: 73%;">
@@ -211,7 +288,7 @@
                         <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn11">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw24da254b/crop/026206405_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 60%; margin-top: 8%; width: 50%;">
@@ -222,7 +299,7 @@
                         <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn12">ADD TO BAG</button>
                     </div>
                 </div>
                 <div class="list">
@@ -235,7 +312,7 @@
                         <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn13">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5595334f/crop/026206401_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 55%; margin-top: 8%; width: 55%;">
@@ -246,7 +323,7 @@
                         <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn14">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw54a8a7f2/crop/026207885_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 55%; margin-top: 8%; width: 70%;">
@@ -256,7 +333,7 @@
                             <h3 id="mrgn" class="sort">$16.50</h3>
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>    
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn15">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw76625cc5/crop/026206407_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 55%; margin-top: 8%; width: 45%;">
@@ -266,7 +343,7 @@
                             <h3 id="mrgn" class="sort">$13.50</h3>
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>    
                         </div>
-                        <button>ADD TO BAG</button>
+                        <button onclick="add()" id="btn16">ADD TO BAG</button>
                     </div>
                 </div>
             </div>
@@ -365,5 +442,6 @@
         </div>
    </footer>
 </body>
-<script src="new_body_care.js"></script>
+<script src="new_body_care.js">
+</script>
 </html>

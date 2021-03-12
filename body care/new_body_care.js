@@ -43,13 +43,13 @@ drop_4.addEventListener('mouseout',function(){
 })
 
 for(var i=0;i<sub_cat_drop.length;i++){
-    sub_cat_drop[i].addEventListener('mouseover',()=>{
+    sub_cat_drop[i].addEventListener('mouseover',(event)=>{
     //    console.log(sub_cat_sub_el[3])
        event.target.childNodes[1].classList.toggle("open-sub-category")
             var a = event.target.parentNode.classList;
   
     })
-    sub_cat_drop[i].addEventListener('mouseleave',()=>{
+    sub_cat_drop[i].addEventListener('mouseleave',(event)=>{
         //    console.log(sub_cat_sub_el[3])
             event.target.childNodes[1].classList.toggle("open-sub-category")
 

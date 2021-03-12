@@ -1,10 +1,3 @@
-function go(){
-    window.location.href ='candles.html'
-
-}
-
-
-
 let drop_1 = document.getElementById('nav-dropdown0');
 let drop_2 = document.getElementById('nav-dropdown1');
 let drop_3 = document.getElementById('nav-dropdown2');

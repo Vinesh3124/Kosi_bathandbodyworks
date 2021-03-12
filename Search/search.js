@@ -1,10 +1,3 @@
-function go(){
-    window.location.href ='candles.html'
-
-}
-
-
-
 let drop_1 = document.getElementById('nav-dropdown0');
 let drop_2 = document.getElementById('nav-dropdown1');
 let drop_3 = document.getElementById('nav-dropdown2');
@@ -101,15 +94,15 @@ close.addEventListener('click',()=>{
 
 
 //Footer
-// let help_btn = document.getElementsByClassName('help-btn');
-// let cols = document.getElementsByClassName('col')
+let help_btn = document.getElementsByClassName('help-btn');
+let cols = document.getElementsByClassName('col')
 
-// help_btn[0].addEventListener('click',()=>{
-//     for(var i=1;i<=4;i++){
-//         cols[i].classList.toggle("open-end-nav")
-//     }
+help_btn[0].addEventListener('click',()=>{
+    for(var i=1;i<=4;i++){
+        cols[i].classList.toggle("open-end-nav")
+    }
     
-// })
+})
 // sub_cat_drop[2].addEventListener('mouseover',()=>{
 //     //    console.log(sub_cat_sub_el[3])
 //        event.target.childNodes[1].classList.toggle("open-sub-category")

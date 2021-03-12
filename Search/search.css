@@ -1,10 +1,9 @@
-/* navbar starts here */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
-/* *{
+*{
     padding: 0;
     margin: 0;
-} */
+}
 
 /* ==================== Top Wrap (Logo,search-bar,icons) ====================*/
 
@@ -66,7 +65,7 @@
     border: none;
 }
 .search-bar button img{
-    height: 20px;
+    height: 25px;
 }
  #myAccount img{
     height: 35px;
@@ -335,9 +334,9 @@ nav{
 /*Responsive to mobile*/
 
 @media only screen and (max-width: 600px) {
-    .drop{
-        /* position: relative; */
-    }
+    /* .drop{
+        position: relative;
+    } */
 
     .cat-col-2{
         display: none;
@@ -378,285 +377,8 @@ nav{
 
 }
 
+/*=====================================Footer===============================*/
 
-/* navbar ends here */
-
-#top-cont {
-    display: flex;
-    width: 100%;
-    height: 1000px;
-    /* border: 2px solid red; */
-}
-
-#top-cont>div {
-    /* margin: 20px; */
-    width: 20%;
-    /* border: 2px solid black; */
-}
-
-#top-cont>div:nth-of-type(2) {
-    flex-grow: 3;
-}
-
-#right-cont>div {
-    width: 100%;
-    height: 330px;
-    /* border: 1px solid blue */
-}
-
-#category-cont {
-    display: flex;
-}
-
-#category-cont>div {
-    width: 25%;
-    height: auto;
-    /* border: 1px solid gray; */
-}
-
-#category-cont  button {
-    border: 2px solid black;
-    background-color: white;
-    color: grey;
-    margin-left: 60px;
-    height: 30px;
-    width: 150px;
-}
-
-#text-cont {
-    width: 50%;
-    margin: auto;
-    color: gray;
-}
-
-#left-cont>div {
-    width: 100%;
-    min-height: 50px;
-    /* border: 1px solid cyan */
-}
-
-#left-cont a {
-    text-decoration: none;
-    color: gray;
-    font-size: 15px;
-}
-
-#left-cont a:hover {
-    color: blue;
-}
-
-#category-cont  button:hover {
-    background-color: rgb(29, 26, 26);
-    color: white;
-}
-
-#title {
-    font-size: 25px;
-    color: gray;
-}
-
-#p {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid #000;
-    line-height: 0.1em;
-    margin: 10px 0 20px;
-}
-
-P span {
-    background: #fff;
-    padding: 0 10px;
-}
-
-/* candle page */
-
-
-#candle-left a {
-    text-decoration: none;
-    color: gray;
-    font-size: 15px;
-}
-
-#candle-left a:hover {
-    color: blue;
-}
-#candle-cont{
-    display: flex;
-}
-
-#candle-cont>div {
-    /* margin: 20px; */
-    /* display: flex; */
-    width: 20%;
-    /* border: 2px solid black; */
-}
-
-#candle-cont>div:nth-of-type(2) {
-    flex-grow: 3;
-    /* display: flex; */
-  
-}
-
-#right-cont>div {
-    
-    width: 100%;
-    height: 360px;
-    /* border: 1px solid blue; */
-   
-}
-#candlediv{
-    width: 23%;
-    height: 500px;
-    float: left;
-    text-align: center;
-    margin: 10px;
-    
-
-}
-#candlediv img{
-    width: 100%;
-    height: 250px;
-}
-#candlediv button{
-    border: 2px solid black;
-    background-color: rgb(29, 26, 26);
-    color: grey;
-    width: 200px;
-    height: 40px;
-
-}
-#candlediv > button:hover{
-    background-color: white;
-    color: #333333
-}
-.blue{
-    color: blue;
-    font-weight:bolder;
-}
-.price,.name{
-    color: #333333;
-    font-size: 16px;
-    font-weight: bolder;
- 
-  
-}
-.grey{
-    color: #666666;
-}
-.blue, .name, .price, .grey{
-    line-height:5px;
-}
-
-/* checkbox */
-
-.dropdown{
-    display: flex;
-    width: 100%;
-    height: 80px;
-    /* border: 1px solid lightcoral; */
-}
-#subdropBox{
-    display: flex;
-    width: 70%;
-    height: 50px;
-    /* border: 1px solid green; */
-}
-#sortBy{
-    width: 30%;
-    height: 50px;
-    /* border: 1px solid green; */
-}
-#subdropBox > div{
-    width: 33%;
-    /* border: 1px solid black; */
-    height: 35px;
-    background-color: #66666610
-}
-
-#subdropBox button{
-    background-color:rgba(0, 0, 0, 0.815);
-    color: white;
-    width: 100px;
-    height: 35px;
-    margin-left: 40px;
-    margin-top: 10px;
-    
-}
-#subdropBox button:hover{
-    background-color: white;
-    color: black;
-}
-
-
-
-.multipleSelection { 
-    width: 200px; 
- background-color: white;
-} 
-
-.selectBox { 
-    position: relative; 
-} 
-
-.selectBox select { 
-    width: 100%; 
-    font-weight: bold; 
-} 
-
-.overSelect { 
-    position: absolute; 
-    left: 0; 
-    right: 0; 
-    top: 0; 
-    bottom: 0; 
-} 
-
-#checkBoxes { 
-    display: none; 
-    
-} 
-
-#checkBoxes label { 
-    display: block; 
-} 
-
-/* #checkBoxes label:hover { 
-    background-color: #4F615E; 
-}  */
-#checkBoxes2 { 
-    display: none; 
-    border: 1px #8DF5E4 solid; 
-} 
-
-#checkBoxes2 label { 
-    display: block; 
-} 
-#checkBoxes3 { 
-    display: none; 
-    border: 1px #8DF5E4 solid; 
-} 
-
-#checkBoxes3 label { 
-    display: block; 
-} 
-#checkBoxes4 { 
-    display: none; 
-    border: 1px #8DF5E4 solid; 
-} 
-
-#checkBoxes4 label { 
-    display: block; 
-} 
-
-
-
-
-
-
-
-
-
-/* footer */
 footer{
     border-top: 2px solid rgb(233, 230, 230);
 }
@@ -721,6 +443,7 @@ footer{
 .social-media-icon li{
    list-style: none;
 }
+
 .footer-img{
     position: absolute;
     right: 0;
@@ -728,9 +451,11 @@ footer{
     padding-right: 130px;
     padding-top: 20px;
 }
+
 .footer-img img{
     height: 80px;
 }
+
 .end{
     background-color: rgb(233, 229, 229);
     padding: 30px;
@@ -752,6 +477,7 @@ footer{
     border-right: 1px solid grey;
     padding: 0 5px 0 5px;
 }
+
 #copy{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 14px;
@@ -765,7 +491,9 @@ footer{
     font-family: sans-serif;
     display: none;
 }
+
 /*Responsive TO mobile*/
+
 @media only screen and (max-width: 600px) {
     .footer-links{
         flex-direction: column;
@@ -776,6 +504,7 @@ footer{
     .footer-form input{
         width: 100%;
     }
+
     .col-2 ,.col-3 ,.col-4 ,.col-5 {
        padding: 10px;
        /* background-color: hotpink; */
@@ -809,11 +538,9 @@ footer{
      .open-end-nav{
          display: block;
      }
+
      .help-btn{
         display: block;
     }
 }
-
-
-
 

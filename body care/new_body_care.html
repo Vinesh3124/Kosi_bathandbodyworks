@@ -13,6 +13,13 @@
     <title>New body Care</title>
 </head>
 <body>
+    <div id="myModal1" class="modal1">
+        <!-- Modal content -->
+        <div class="modal-content1">
+          <span class="close1">&times;</span>
+          <div id="cartAddModal"></div>
+        </div>
+    </div>
     <div id="whole_page">
         <div id="left_src">
             <div>
@@ -170,15 +177,13 @@
                         
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5f13ce94/crop/026205663_crop.jpg?sw=500&sh=600&sm=fit&q=75"
                         style="height: 60%; margin-top: 8%; width: 50%;" onmouseover="quicklook()">
-                        <div id="quicklook"><i class="fa fa-eye" style="font-size:26px"></i>
-                        <p>Quick Look</p></div>
                         <div>
                             <h3>Waikiki Beach Coconut</h3>
                             <p>Shower Gel</p>
                             <h3 id="mrgn" class="sort">$13.50</h3>
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         </div>
-                        <button onclick="add()" id="btn1">ADD TO BAG</button>    
+                        <button onclick="add(event)" id="btn1">ADD TO BAG</button>    
                         
                     </div>
                     <div>
@@ -190,7 +195,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                                 
                         </div>
-                        <button onclick="add()" id="btn2">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn2">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwaf7ca7af/crop/026206403_crop.jpg?sw=500&sh=600&sm=fit&q=75" style="height: 60%; margin-top: 8%; width: 45%;">
@@ -201,7 +206,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                                 
                         </div>
-                        <button onclick="add()" id="btn3">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn3">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5e0491b0/crop/026208719_crop.jpg?sw=500&sh=600&sm=fit&q=75"
@@ -213,7 +218,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                                 
                         </div>
-                        <button onclick="add()" id="btn4">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn4">ADD TO BAG</button>
                     </div>
                 </div>
                 <div class="list">
@@ -226,7 +231,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         </div>
                         
-                        <button onclick="add()" id="btn5">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn5">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw112b9228/crop/026205671_crop.jpg?sw=500&sh=600&sm=fit&q=75" style="height: 60%; margin-top: 8%; width: 35%;">
@@ -237,7 +242,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         </div>
                         
-                        <button onclick="add()" id="btn6">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn6">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw4cd3b24b/crop/026205667_crop.jpg?sw=500&sh=600&sm=fit&q=75" style="height: 60%; margin-top: 8%; width: 50%;">
@@ -248,7 +253,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         </div>
                         
-                        <button onclick="add()" id="btn7">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn7">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6f5f1177/crop/026204504_crop.jpg?sw=500&sh=600&sm=fit&q=75" style="height: 60%; margin-top: 8%; width: 65%;">
@@ -259,7 +264,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         </div>
                         
-                        <button onclick="add()" id="btn8">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn8">ADD TO BAG</button>
                     </div>
                 </div>
                 <div class="list">
@@ -271,7 +276,7 @@
                             <h3 id="nomrgn" class="sort">$13.50</h3>
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>    
                         </div>
-                        <button onclick="add()" id="btn9">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn9">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc63f29bc/crop/026204505_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 60%; margin-top: 8%; width: 70%;">
@@ -282,7 +287,7 @@
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                             
                         </div>
-                        <button onclick="add()" id="btn10">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn10">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw63af0811/crop/026239837_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 60%; margin-top: 8%; width: 73%;">
@@ -293,7 +298,7 @@
                         <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         
                         </div>
-                        <button onclick="add()" id="btn11">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn11">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw24da254b/crop/026206405_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 60%; margin-top: 8%; width: 50%;">
@@ -304,7 +309,7 @@
                         <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         
                         </div>
-                        <button onclick="add()" id="btn12">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn12">ADD TO BAG</button>
                     </div>
                 </div>
                 <div class="list">
@@ -317,7 +322,7 @@
                         <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         
                         </div>
-                        <button onclick="add()" id="btn13">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn13">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5595334f/crop/026206401_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 55%; margin-top: 8%; width: 55%;">
@@ -328,7 +333,7 @@
                         <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>
                         
                         </div>
-                        <button onclick="add()" id="btn14">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn14">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw54a8a7f2/crop/026207885_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 55%; margin-top: 8%; width: 70%;">
@@ -338,7 +343,7 @@
                             <h3 id="mrgn" class="sort">$16.50</h3>
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>    
                         </div>
-                        <button onclick="add()" id="btn15">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn15">ADD TO BAG</button>
                     </div>
                     <div>
                         <img src="https://www.bathandbodyworks.com/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw76625cc5/crop/026206407_crop.jpg?sw=500&sh=600&sm=fit&q=75"style="height: 55%; margin-top: 8%; width: 45%;">
@@ -348,10 +353,11 @@
                             <h3 id="mrgn" class="sort">$13.50</h3>
                             <p>Mix & Match: Buy 3, Get 2 Free or Buy 2, Get 1 Free</p>    
                         </div>
-                        <button onclick="add()" id="btn16">ADD TO BAG</button>
+                        <button onclick="add(event)" id="btn16">ADD TO BAG</button>
                     </div>
                 </div>
             </div>
+            
             <div id="paras">
                 <p>About New Body Care from Bath & Body Works.</p>
                 <p>Welcome to the world of new body care, where you can find the latest releases, seasonal fragrances and freshest products.</p>
@@ -366,7 +372,9 @@
                 <p>Looking to indulge a little more? Explore body scrubs – not only are they the definition of pampering, but they’re great for exfoliating your skin. And while you’re getting some R&R, soak and chill with our super-luxe and super fluffy bubble bath. (Don’t forget a glass of wine and a great podcast.)</p>
                 <p>Now that you’ve found all things new, what about scents you haven’t seen for a while? Head over to retired fragrances and reunite with some old faves!</p>
             </div>
+            
         </div>
+        
     </div>    
     <footer>
         <div class="footer-links">

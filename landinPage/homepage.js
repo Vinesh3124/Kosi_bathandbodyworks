@@ -180,7 +180,7 @@ function getNewProducts(){
                     <p class="card_info_para">${name}</p>
                     <p class="card_info_para_desc">${shr_Desc}</p>
                 </div>
-                <button class="card_AddCartBtn">ADD TO BAG</button>
+                <button onclick="addToCart(${id})" class="card_AddCartBtn">ADD TO BAG</button>
                 <div class="flat" id="quickViewDiv" onclick="getProductDetails(${id})" onmouseover="quickViewIn(${id})" onmouseout="quickViewOut(${id})">
                     <i class="fas fa-eye">
                         <p>Quicklook</p>
@@ -193,6 +193,70 @@ function getNewProducts(){
     }
 
 }
+//===============================================Adding Data to LS======================================================
+let arr = []
+function addToCart(val){
+    console.log("val")
+    let id = val
+    fetch(`http://localhost:3000/Fresh?id=${id}`).then(response => response.json()).then(data => getProductDetailsCart(data)).catch(error => console.log(error))
+    
+    function getProductDetailsCart(data){
+        let html = ""
+        let id = data[0].id
+        let name = data[0].name
+        let img = data[0].img
+        let price = data[0].Price
+        let shr_Desc = data[0].Short_Description
+        let count = data[0].count
+        let total = data[0].totalP
+        console.log(total)
+        let temp = {}
+        temp.id = id
+        temp.name = name
+        temp.img = img
+        temp.price = price
+        temp.desc = shr_Desc
+        temp.count = count
+        temp.total = total
+
+        console.log(temp)
+        arr = [...arr,temp]
+        localStorage.setItem("cart",JSON.stringify(arr))
+
+        // Get the modal
+        let modal1 = document.getElementById("myModal1");
+        // Get the button that opens the modal  
+        // var btn = document.getElementById("myBtn");
+        // Get the <span> element that closes the modal
+        let span1 = document.getElementsByClassName("close1")[0];
+        // When the user clicks the button, open the modal 
+        // btn.onclick = function() {
+        modal1.style.display = "block";
+        // }
+        // When the user clicks on <span> (x), close the modal
+        span1.onclick = function() {
+            modal1.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+
+        html+= `
+        <div class="cartAdd">
+            <h3>Item Added to Cart</h3>
+            <div class="imageBox">
+                <img src="https://media.tenor.com/images/b95474b4e57295c82fb7ffc3b882e683/tenor.gif" class="img" alt="">
+            </div>
+        </div>
+        `
+        document.getElementById("cartAddModal").innerHTML = html
+    }
+}
+
+
 //===============================================Product view Modal======================================================
 function getProductDetails(val){
     let id = val
@@ -201,6 +265,7 @@ function getProductDetails(val){
 
     function displayModalData(data){
         console.log(data)
+        let id = data[0].id
         let name = data[0].name
         let desc = data[0].Description
         let price = data[0].Price
@@ -234,6 +299,10 @@ function getProductDetails(val){
 
         document.getElementById("DisplayModalProductData").innerHTML = html
     }
+}
+
+function addToCartH(val){
+    console.log("object")
 }
 
 var modal = document.getElementById("myModal");

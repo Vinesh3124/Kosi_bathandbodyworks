@@ -1,5 +1,6 @@
 body{
     margin: 0%;
+    font-family: 'Gothic A1', sans-serif;
 }
 
 .img{
@@ -8,7 +9,7 @@ body{
 }
 
 .locationLogin{
-    width: 12%;
+    width: 15%;
     font-size: 13px;
     margin-left: 2%;
     /* border: 1px solid; */
@@ -96,6 +97,7 @@ body{
     margin: auto;
     text-align: center;
     line-height: 5px;
+    line-height: 15px;
 }
 
 .loginSignBox_left_title>p:nth-child(1){

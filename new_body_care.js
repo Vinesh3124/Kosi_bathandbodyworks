@@ -64,3 +64,10 @@ function showCheckboxes2() {
       expanded = false;
     }
   }
+
+
+  function quicklook(){
+    let div = document.createElement("div")
+    
+        // <i class="fa fa-eye" style="font-size:36px"></i>
+  }

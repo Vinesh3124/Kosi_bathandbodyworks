@@ -349,6 +349,20 @@ footer{
   }
 
 /* ===========================================products================================ */
+.list>div{
+    position: relative;
+}
+#quicklook{
+    display: none;
+    right: 20px;
+    top: 20px;
+    width: 70px;
+    border-radius: 50%;
+    /* height: 60px; */
+    margin-top: 170px;
+    position: absolute;
+    border: 1px solid black;
+}
 .list>div>p{
     font-family: 'Open Sans', sans-serif;
 }

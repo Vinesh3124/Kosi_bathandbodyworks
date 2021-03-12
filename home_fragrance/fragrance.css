@@ -813,6 +813,19 @@ footer{
         display: block;
     }
 }
+
+
+@media only screen and (max-width: 600px) {
+    #left-cont , #candle-left{
+        display: none;
+    }
+    #category-cont>div {
+   
+        width: 50%;
+        height: auto;
+        /* border: 1px solid gray; */
+    }
+
 /* 
 modal box */
 /* The Modal (background) */

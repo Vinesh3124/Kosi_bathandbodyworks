@@ -29,5 +29,5 @@ async function getUserData(){
         body: JSON.stringify(body),
     }).then(response => response.json()).then(data => console.log(data)).catch(error => console.log(error))
 
-    window.location.href="/index.html"
+    window.location.href="/Login_SignUp/login.html"
 }

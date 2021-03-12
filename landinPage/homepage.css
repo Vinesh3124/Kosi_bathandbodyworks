@@ -146,7 +146,7 @@ body{
     margin: auto;
     /* border: 1px solid black; */
     margin-top: 8%;
-    line-height: 16px;
+    line-height: 26px;
     text-align: center;
 }
 
@@ -241,7 +241,7 @@ body{
 .productInfoCaro_Title{
     /* border: 1px solid; */
     margin-left: 2%;
-    line-height: 5px;
+    line-height: 30px;
 }
 
 .displayProductItemDiv{
@@ -390,7 +390,7 @@ body{
 }
 
 .hompageMidPoster_card_info{
-    line-height: 10px;
+    line-height: 20px;
 }
 
 .hompageMidPoster_card_info>p{
@@ -490,7 +490,7 @@ body{
 .dashedBar_text1{
     width: 35%;
     /* border: 1px solid; */
-    line-height: 0.5%;
+    line-height: 18px;
 }
 
 #shopByCata{
@@ -700,16 +700,17 @@ body{
     display: flex;
 }
 
-/* .cartAdd>h3{ */
-    /* border: 1px solid; */
+.cartAdd>h3{ 
+    /* border: 1px solid;  */
+    margin-top: 8%;
     /* margin-left: 10%; */
-/* } */
+}
 
 .imageBox{
     width: 60px;
     height: 60px;
     /* border: 1px solid; */
-    margin-left: 9%;
+    /* margin-left: 9%; */
     margin-top: 0%;
 }
 

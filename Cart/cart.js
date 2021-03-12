@@ -188,7 +188,7 @@ function paymentModal(amount, finaltax, total, totalProduct){
     let user = localStorage.getItem("user")
 
     if(user === null){
-        alert("Login")
+        alert("Please Login to place an order")
     }
     else{
         let info = JSON.parse(user)

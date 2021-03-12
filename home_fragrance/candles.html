@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>test</h1>
+
     <div id="candle-cont">
         <div id="candle-left">
             <div>
@@ -52,10 +52,92 @@
                 </ul>
             </div>
         </div>
-        <div id="candle-right">
+        <div>
+            <P>ALL CANDLES</P>
+            <hr>
+            <div id="candle-right"></div>
 
         </div>
     </div>
+      <!-- footer -->
+      <footer>
+        <div class="footer-links">
+            <div class="col col-1">
+                <p>Get email offers & the latest news from Bath & <br> Body Works!</p>
+               <div class="footer-form">
+                <label>Enter Email</label>
+                <div  class="email"><input type="email"> <img src="assets/UI-Information.svg" height="17px" style="background-color: rgb(235, 235, 235);padding: 8px;border-radius: 50%; margin-left: 3px;"></div>
+                <label>Confirm Email</label>
+                <div class="email"><input type="email"><button>Submit</button></div>
+               </div>
+                  <div class="social-media">
+                   <label>GET CONNECTED</label>
+                    <ul class="social-media-icon">
+                         <li><img src="assets/facebook-icon.png" height="30px"></li>
+                         <li><img src="assets/instagram-circle-logo-1.png" height="30px"></li>
+                         <li><img src="assets/1491579542-yumminkysocialmedia22_83078.png" height="30px"></li>
+                         <li><img src="assets/youtube.png" height="30px"></li>
+                         <li><img src="assets/pinterest_PNG62.png" height="30px"></li>
+                    </ul>
+                   </div>
+            </div>
+            <div class="help-btn"><p style="margin-left: 20px;">LET US HELP</p></div>
+            <div class="col col-2">
+                <p>CUSTOMER CARE</p>
+                <ul>
+                   <li>Help & FAQs</li>
+                   <li> Shipping</li>
+                  <li> Returns & Exchanges</li>
+                   <li>Order Tracking</li>
+                   <li>Corporate Sales & Gifts</li>
+                  <li> Contact Us</li>
+                </ul>
+            </div>
+            
+            <div class="col col-3">
+               <p>MY ACCOUNT</p>
+               <ul>
+                  <li>Sign In or Sign Up</li>
+                  <li>Order Tracking</li>
+                  <li>My Love-It List</li>
+               </ul>
+           </div>
+           
+           <div class="col col-4">
+               <p> DISCOVER</p>
+               <ul>
+                  <li>Our Story</li>
+                  <li>Careers</li>
+                   <li> Gift Cards</li>
+                   <li> Videos</li>
+                   <li>Product Ingredients</li> 
+                   <li>Get Inspired</li>
+               </ul>
+           </div>
+           
+           <div class="col col-5">
+               <p>CUSTOMER CARE</p>
+               <ul>
+                  <li> FIND US</li>
+                  <li>Store Locator</li>
+               <li>Global Locations</li>
+               </ul>
+           </div>
+        </div>
+        <div class="footer-img"><img src="assets/Happiness_Guaranteedtimes2_v2.jpg"></div>
+        <div class="end">
+            <ul>
+              <li>Site Map </li> 
+               <li>Terms Of Use </li>
+               <li>Privacy Policy </li>
+               <li>California Privacy Rights </li>
+               <li>Do Not Sell My Personal Information (California) </li>
+               <li>Modern Slavery Transparency Statement </li>
+               <li>Ad Preferences</li>
+            </ul>
+            <p id='copy'>© 2021 Bath & Body Works Direct, Inc. All Rights Reserved.</p>
+        </div>
+   </footer>
 
 
     <script>
@@ -70,17 +152,17 @@
                         let img = res[i].img
                         let title = res[i].title
                         let name = res[i].name
-                        let subname = res[i].sub-name
+                        let subname = res[i].subname
                         let Price = res[i].Price
                         html += `
                        
           
                 <div id="candlediv">
                     <img src="${img}" class="img" alt="">
-                    <p class="secondPara">${title}</p>
-                    <p class="thirdPara">${name}</p>
-                    <p class="secondPara">${subname}</p>
-                    <p class="thirdPara">${Price}</p>
+                    <p class="blue">${title}</p>
+                    <p class="name">${name}</p>
+                    <p class="grey">${subname}</p>
+                    <p class="price">${Price}</p>
                 <button class="btnCandle">ADD TO BAG</button>
             </div>`
                     }
@@ -89,6 +171,7 @@
             })
 
     </script>
+     <!-- <script src="home-frag.js"></script> -->
 
 </body>
 

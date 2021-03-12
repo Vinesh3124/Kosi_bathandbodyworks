@@ -12,6 +12,7 @@ body{
     width: 15%;
     font-size: 13px;
     margin-left: 2%;
+    margin-top: 6%;
     /* border: 1px solid; */
 }
 
@@ -90,7 +91,7 @@ body{
 .signupInputBox_2>p{
     text-align: center;
     font-size: 12px;
-    line-height: 5px;
+    line-height: 18px;
 }
 
 .signupInputBox_2{

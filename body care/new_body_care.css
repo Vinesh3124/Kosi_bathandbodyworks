@@ -176,7 +176,6 @@ nav{
     display: none;
 }
 .nav-links{
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -384,7 +383,6 @@ nav{
     width: 100%;
     display: grid;
     grid-template-columns: 19% 80%;
-    /* position: relative; */
 }
 /* ==============================left part========================================= */
 #left_src{
@@ -426,7 +424,6 @@ nav{
     display: grid;
     grid-template-columns: 81% 17%;
     gap: 2%;
-    position: absolute;
 }
 #filter>div:nth-child(2)>select{
     margin-top: 17%;
@@ -456,7 +453,7 @@ nav{
   
   .ptselectBox {
     border-bottom: 2px solid black;
-        position: absolute;
+        position: relative;
   }
   
   .ptselectBox select {
@@ -660,7 +657,7 @@ nav{
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 40%;
+    width: 30%;
 }
   
   /* The Close Button */
@@ -677,6 +674,15 @@ nav{
     text-decoration: none;
     cursor: pointer;
 }
+.cartAdd{
+    display: flex;
+    gap: 30px;
+}
+.img{
+  height: 120px;
+  width: 120px
+}
+
 
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");

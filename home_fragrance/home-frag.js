@@ -121,3 +121,5 @@ close.addEventListener('click',()=>{
 //         event.target.childNodes[1].classList.toggle("open-sub-category")
 //         console.log(event.target.childNodes[3].innerHTML)
 // })
+
+

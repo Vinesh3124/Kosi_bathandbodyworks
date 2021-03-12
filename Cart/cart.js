@@ -104,9 +104,10 @@ function displayCartFun(data){
             </div>
         </td>
         </tr>
-    </table>
+        </table>
         `
     }
+
     document.getElementById("displayCartDetails").innerHTML = midHtml
     // let fprice = totalPrice
     let tax = 10/100
@@ -260,7 +261,6 @@ function paymentModal(amount, finaltax, total, totalProduct){
             `
             document.getElementById("displayPaymentModal").innerHTML = cHtml
         },2000)
-
     }
 }
 
@@ -277,7 +277,7 @@ function processPayment(){
             <strong>Placing your order, Please wait!!!</strong>
         </div>
     </div>
-`
+    `
 
     document.getElementById("displayPaymentModal").innerHTML = html
 
@@ -298,9 +298,6 @@ function processPayment(){
         getLsData()
     }, 4000)
 }
-
-
-
 
 async function removeItemCart(val){
     let data = localStorage.getItem("cart")
@@ -327,14 +324,3 @@ function addItemCart(val){
     localStorage.setItem("cart", JSON.stringify(data))
     getLsData()
 }
-
-// window.addEventListener("load", function(){
-//     let user = localStorage.getItem("user")
-
-//     if(user === null){
-//         alert("Login")
-//     }
-//     else{
-//         alert("GOOD")
-//     }
-// })

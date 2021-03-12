@@ -59,9 +59,9 @@ body{
     display: flex;
 }
 
-#cartProductDetails_check_para{
-    /* border: 1px solid; */
-}
+/* #cartProductDetails_check_para{
+    border: 1px solid;
+} */
 
 #checkOutBtn{
     height: 30px;

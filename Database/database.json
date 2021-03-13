@@ -601,18 +601,6 @@
       "email": "felicia2005@gmail.com",
       "phone": "615-837-5090",
       "password": "derrick123"
-    },
-    {
-      "Fname": "test",
-      "Lname": "test",
-      "email": "test",
-      "street": "test",
-      "city": "test",
-      "state": "test",
-      "zipcode": "test",
-      "phone": "test",
-      "password": "test",
-      "id": 505
     }
   ]
 }

@@ -3,20 +3,25 @@ document.getElementById("loginBtn").addEventListener("click", startLogin)
 function startLogin(){
     let email = document.getElementById("loginEmailVal").value
     let password = document.getElementById("loginPassVal").value
-    let input = {
-        email: email,
-        password: password
+    if(email === "" || password === ""){
+        alert("Invalid Email or Password")
     }
-
-    fetch(`http://localhost:3000/users`).then(response => response.json()).then(data => verifyLogin(data, input)).catch(error => console.log(error))
-
-    function verifyLogin(data, input){
-        const info = data.find(user => (user.email === input.email && user.password === input.password))
-        if(info === undefined){
-            alert("Invalid Email or Password")
+    else{
+        let input = {
+            email: email,
+            password: password
         }
-        else{
-            setToLS(info)
+    
+        fetch(`http://localhost:3000/users`).then(response => response.json()).then(data => verifyLogin(data, input)).catch(error => console.log(error))
+    
+        function verifyLogin(data, input){
+            const info = data.find(user => (user.email === input.email && user.password === input.password))
+            if(info === undefined){
+                alert("Invalid Email or Password")
+            }
+            else{
+                setToLS(info)
+            }
         }
     }
 }

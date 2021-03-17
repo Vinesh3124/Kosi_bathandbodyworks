@@ -613,6 +613,18 @@
       "phone": "",
       "password": "",
       "id": 505
+    },
+    {
+      "Fname": "Vinesh",
+      "Lname": "Nair",
+      "email": "vinesh.nair31@gmail.com",
+      "street": "Gokul Nagar,Dhanori Rd",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "zipcode": "411015",
+      "phone": "+918087194441",
+      "password": "123456",
+      "id": 506
     }
   ]
 }

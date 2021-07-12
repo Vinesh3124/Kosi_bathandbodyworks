@@ -60,3 +60,7 @@ To create this clone following Tech stack is used by contributors.
 - **Github** : singhalayush1998
 - **Email** : 1998ayushsinghal@gmail.com
 - **Linkedin** : https://www.linkedin.com/in/ayush-singhal-a238b513b/
+
+## netlify : [![Netlify Status](https://api.netlify.com/api/v1/badges/ff89886f-40bf-468e-b181-aa9809efa6ce/deploy-status)](https://app.netlify.com/sites/flamboyant-benz-1acda2/deploys)
+
+

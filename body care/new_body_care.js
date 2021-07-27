@@ -118,7 +118,7 @@ let arr = []
 function add(event){
 
     let btnid = event.target.id
-    fetch(`http://localhost:3000/new_body`).then(response => response.json()).then(data => alldata(data)).catch(error => console.log(error))
+    fetch(`https://bath-and-body-mock-server.herokuapp.com/new_body`).then(response => response.json()).then(data => alldata(data)).catch(error => console.log(error))
   function alldata(data){
     for(let i = 0 ;i<16;i++){
       if(`btn${data[i].id}` == btnid){
@@ -126,7 +126,7 @@ function add(event){
       }
     }
 
-    fetch(`http://localhost:3000/new_body?id=${id}`).then(response => response.json()).then(data => getProductDetailsCart(data)).catch(error => console.log(error))
+    fetch(`https://bath-and-body-mock-server.herokuapp.com/new_body?id=${id}`).then(response => response.json()).then(data => getProductDetailsCart(data)).catch(error => console.log(error))
     
     function getProductDetailsCart(data){
         let html = ""

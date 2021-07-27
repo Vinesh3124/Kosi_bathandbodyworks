@@ -21,7 +21,7 @@ async function getUserData(){
                 "phone": phone,
                 "password": password}
 
-    await fetch(`http://localhost:3000/users`, {
+    await fetch(`https://bath-and-body-mock-server.herokuapp.com/users`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

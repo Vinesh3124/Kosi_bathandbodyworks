@@ -12,7 +12,7 @@ function startLogin(){
             password: password
         }
     
-        fetch(`http://localhost:3000/users`).then(response => response.json()).then(data => verifyLogin(data, input)).catch(error => console.log(error))
+        fetch(`https://bath-and-body-mock-server.herokuapp.com/users`).then(response => response.json()).then(data => verifyLogin(data, input)).catch(error => console.log(error))
     
         function verifyLogin(data, input){
             const info = data.find(user => (user.email === input.email && user.password === input.password))

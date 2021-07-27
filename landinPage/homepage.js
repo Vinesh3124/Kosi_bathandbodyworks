@@ -66,12 +66,12 @@ function getOfferData(){
         pageCount++
         if(pageCount>2){
             pageCount = 2
-            fetch(`http://localhost:3000/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
                 document.getElementById("leftOfferBtn").style.display = "block"
                 document.getElementById("rightOfferBtn").style.display = "none"
         }
         else{
-            fetch(`http://localhost:3000/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
                 document.getElementById("leftOfferBtn").style.display = "block"
                 document.getElementById("rightOfferBtn").style.display = "none"
         }
@@ -81,17 +81,17 @@ function getOfferData(){
         pageCount--
         if(pageCount == 0 || pageCount < 1){
             pageCount = 1
-            fetch(`http://localhost:3000/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
             document.getElementById("leftOfferBtn").style.display = "none"
             document.getElementById("rightOfferBtn").style.display = "block"
         }
         else{
-            fetch(`http://localhost:3000/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
             document.getElementById("leftOfferBtn").style.display = "none"
             document.getElementById("rightOfferBtn").style.display = "block"
         }
     })
-    fetch("http://localhost:3000/offer?_page=1&_limit=4").then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
+    fetch("https://bath-and-body-mock-server.herokuapp.com/offer?_page=1&_limit=4").then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
 
     function displayOfferData(data){
         let html = ""
@@ -131,12 +131,12 @@ function getNewProducts(){
         pageCount++
         if(pageCount>2){
             pageCount = 3
-            fetch(`http://localhost:3000/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
                 document.getElementById("pNavBtn1").style.display = "block"
                 document.getElementById("pNavBtn2").style.display = "none"
         }
         else{
-            fetch(`http://localhost:3000/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
                 document.getElementById("pNavBtn1").style.display = "block"
                 document.getElementById("pNavBtn2").style.display = "block"
         }
@@ -147,17 +147,17 @@ function getNewProducts(){
         console.log(pageCount)
         if(pageCount == 1 || pageCount < 1){
             pageCount = 1
-            fetch(`http://localhost:3000/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
             document.getElementById("pNavBtn1").style.display = "none"
             document.getElementById("pNavBtn2").style.display = "block"
         }
         else{
-            fetch(`http://localhost:3000/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
             document.getElementById("pNavBtn1").style.display = "block"
             document.getElementById("pNavBtn2").style.display = "block"
         }
     })
-    fetch(`http://localhost:3000/Fresh?_page=1&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => console.log(error))
+    fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?_page=1&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => console.log(error))
 
     function displayNewItem(data){
         let html = ""
@@ -198,7 +198,7 @@ let arr = []
 function addToCart(val){
     console.log("val")
     let id = val
-    fetch(`http://localhost:3000/Fresh?id=${id}`).then(response => response.json()).then(data => getProductDetailsCart(data)).catch(error => console.log(error))
+    fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?id=${id}`).then(response => response.json()).then(data => getProductDetailsCart(data)).catch(error => console.log(error))
     
     function getProductDetailsCart(data){
         let html = ""
@@ -251,7 +251,7 @@ function addToCart(val){
 function getProductDetails(val){
     let id = val
     modal.style.display = "block"
-    fetch(`http://localhost:3000/Fresh?id=${id}`).then(response => response.json()).then(data => displayModalData(data)).catch(error => console.log(error))
+    fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?id=${id}`).then(response => response.json()).then(data => displayModalData(data)).catch(error => console.log(error))
 
     function displayModalData(data){
         console.log(data)
@@ -333,7 +333,7 @@ function quickViewOut(val){
 window.addEventListener("load", loadBanner)
 
 function loadBanner(){
-    fetch("http://localhost:3000/Banner").then(response => response.json()).then(data => displayBannerData(data)).catch(error => console.log(error))
+    fetch("https://bath-and-body-mock-server.herokuapp.com/Banner").then(response => response.json()).then(data => displayBannerData(data)).catch(error => console.log(error))
 
     function displayBannerData(data){
         let html = ""
@@ -364,7 +364,7 @@ function loadBanner(){
 window.addEventListener("load", getCategory)
 
 function getCategory(){
-    fetch("http://localhost:3000/Category").then(response => response.json()).then(data => displayCategory(data)).catch(error => console.log(error))
+    fetch("https://bath-and-body-mock-server.herokuapp.com/Category").then(response => response.json()).then(data => displayCategory(data)).catch(error => console.log(error))
 
     function displayCategory(data){
         let html = ""
@@ -403,12 +403,12 @@ function getBodyWorkData(){
         pageCount++
         if(pageCount>2){
             pageCount = 2
-            fetch(`http://localhost:3000/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
                 document.getElementById("leftOfferBtn1").style.display = "block"
                 document.getElementById("rightOfferBtn1").style.display = "none"
         }
         else{
-            fetch(`http://localhost:3000/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
                 document.getElementById("leftOfferBtn1").style.display = "block"
                 document.getElementById("rightOfferBtn1").style.display = "none"
         }
@@ -418,17 +418,17 @@ function getBodyWorkData(){
         pageCount--
         if(pageCount == 0 || pageCount < 1){
             pageCount = 1
-            fetch(`http://localhost:3000/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
             document.getElementById("leftOfferBtn1").style.display = "none"
             document.getElementById("rightOfferBtn1").style.display = "block"
         }
         else{
-            fetch(`http://localhost:3000/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
+            fetch(`https://bath-and-body-mock-server.herokuapp.com/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
             document.getElementById("leftOfferBtn1").style.display = "none"
             document.getElementById("rightOfferBtn1").style.display = "block"
         }
     })
-    fetch("http://localhost:3000/atBodyWorks?_page=1&_limit=4").then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
+    fetch("https://bath-and-body-mock-server.herokuapp.com/atBodyWorks?_page=1&_limit=4").then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
 
     function displayBodyWorkData(data){
         let html = ""

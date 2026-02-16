@@ -1,28 +1,42 @@
-document.getElementById("loginBtn").addEventListener("click", startLogin)
+document.getElementById("loginBtn").addEventListener("click", startLogin);
 
-function startLogin(){
-    let email = document.getElementById("loginEmailVal").value
-    let password = document.getElementById("loginPassVal").value
-    if(email === "" || password === ""){
-        alert("Invalid Email or Password")
+async function startLogin() {
+    let email = document.getElementById("loginEmailVal").value;
+    let password = document.getElementById("loginPassVal").value;
+
+    if (email === "" || password === "") {
+        alert("Please fill in all fields");
+        return;
     }
-    else{
-        let input = {
-            email: email,
-            password: password
+
+    try {
+        // 1. Fetch default users from your local database.json
+        const response = await fetch("/Database/database.json");
+        const jsonData = await response.json();
+        const defaultUsers = jsonData.users || []; // Assuming the key is "users"
+
+        // 2. Get the users who signed up via your website (LocalStorage)
+        const localUsers = JSON.parse(localStorage.getItem("allUsers")) || [];
+
+        // 3. Combine both lists into one master list
+        const allRegisteredUsers = [...defaultUsers, ...localUsers];
+
+        // 4. Verify credentials
+        const matchedUser = allRegisteredUsers.find(user => 
+            user.email === email && user.password === password
+        );
+
+        if (matchedUser) {
+            alert("Login Successful!");
+            localStorage.setItem("currentUser", JSON.stringify(matchedUser));
+            window.location.href = "../index.html"; 
+        } else {
+            alert("Invalid Email or Password");
         }
-    
-        fetch(`https://bath-and-body-mock-server.herokuapp.com/users`).then(response => response.json()).then(data => verifyLogin(data, input)).catch(error => console.log(error))
-    
-        function verifyLogin(data, input){
-            const info = data.find(user => (user.email === input.email && user.password === input.password))
-            if(info === undefined){
-                alert("Invalid Email or Password")
-            }
-            else{
-                setToLS(info)
-            }
-        }
+        
+    } catch (error) {
+        console.error("Error accessing user database:", error);
+        alert("System error. Please try again later.");
     }
 }
 

@@ -1,3 +1,7 @@
+// Declare these at the top so ALL functions can access them
+let freshProducts = []; 
+let arr = JSON.parse(localStorage.getItem("cart")) || [];
+
 //==============================================Image Change SetInterval===============================================
 window.addEventListener("load", setImageTime)
 
@@ -50,245 +54,273 @@ function setImageTime(){
         }
     }
 }
-
 //================================================Offer DIV===============================================================
-window.addEventListener("load", getOfferData)
+window.addEventListener("load", getOfferData);
 
-function getOfferData(){
+function getOfferData() {
+    let pageCount = 1;
+    const limit = 4;
+    let allOffers = []; // Global variable to store all data from JSON
 
-    let pageCount = 1
-    if(pageCount == 1){
-        document.getElementById("leftOfferBtn").style.display = "none"
-        document.getElementById("rightOfferBtn").style.display = "block"
+    // 1. Fetch the local JSON file
+    fetch("/Database/database.json")
+        .then(response => response.json())
+        .then(data => {
+            allOffers = data.offer; // Store the array of offers
+            renderPage(); // Initial render
+        })
+        .catch(error => console.error("Error loading local JSON:", error));
+
+    // 2. Logic to slice data and display it
+    function renderPage() {
+        const start = (pageCount - 1) * limit;
+        const end = start + limit;
+        const paginatedData = allOffers.slice(start, end);
+
+        displayOfferData(paginatedData);
+        updateButtons();
     }
 
-    document.getElementById("rightOfferBtn").addEventListener("click", function(){
-        pageCount++
-        if(pageCount>2){
-            pageCount = 2
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
-                document.getElementById("leftOfferBtn").style.display = "block"
-                document.getElementById("rightOfferBtn").style.display = "none"
-        }
-        else{
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
-                document.getElementById("leftOfferBtn").style.display = "block"
-                document.getElementById("rightOfferBtn").style.display = "none"
-        }
-    })
+    // 3. Update Button visibility based on current page
+    function updateButtons() {
+        const maxPages = Math.ceil(allOffers.length / limit);
+        
+        // Handle Left Button
+        document.getElementById("leftOfferBtn").style.display = (pageCount > 1) ? "block" : "none";
+        
+        // Handle Right Button
+        document.getElementById("rightOfferBtn").style.display = (pageCount < maxPages) ? "block" : "none";
+    }
 
-    document.getElementById("leftOfferBtn").addEventListener("click", function(){
-        pageCount--
-        if(pageCount == 0 || pageCount < 1){
-            pageCount = 1
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
-            document.getElementById("leftOfferBtn").style.display = "none"
-            document.getElementById("rightOfferBtn").style.display = "block"
-        }
-        else{
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/offer?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
-            document.getElementById("leftOfferBtn").style.display = "none"
-            document.getElementById("rightOfferBtn").style.display = "block"
-        }
-    })
-    fetch("https://bath-and-body-mock-server.herokuapp.com/offer?_page=1&_limit=4").then(response => response.json()).then(data => displayOfferData(data)).catch(error => error)
+    // 4. Event Listeners
+    document.getElementById("rightOfferBtn").addEventListener("click", function() {
+        pageCount++;
+        renderPage();
+    });
 
-    function displayOfferData(data){
-        let html = ""
-        for(i in data){
-            let name = data[i].name
-            let offer= data[i].offerPrice
-            let desc = data[i].Description
-            let id = data[i].id
+    document.getElementById("leftOfferBtn").addEventListener("click", function() {
+        pageCount--;
+        renderPage();
+    });
 
-            html+= `
-            <div id="offerCard">
-                <div id="offerInfor">
-                    <p class="firstPara">${name}</p>
-                    <p class="secondPara">${offer}</p>
-                    <p class="thirdPara">${desc}</p>
+    // 5. Build the HTML UI
+    function displayOfferData(data) {
+        let html = "";
+        data.forEach(item => {
+            html += `
+            <div class="offerCard">
+                <div class="offerInfor">
+                    <p class="firstPara">${item.name}</p>
+                    <p class="secondPara">${item.offerPrice}</p>
+                    <p class="thirdPara">${item.Description || ""}</p>
                 </div>
                 <button class="shopBtn">SHOP</button>
             </div>
-            `
-        }
-        document.getElementById("displayOfferData").innerHTML = html
+            `;
+        });
+        document.getElementById("displayOfferData").innerHTML = html;
     }
 }
+
 //=================================================New Products Display=================================================
-window.addEventListener("load", getNewProducts)
 
-function getNewProducts(){
+window.addEventListener("load", getNewProducts);
 
-    let pageCount = 1
+function getNewProducts() {
+    let pageCount = 1;
+    const limit = 3;
+    //let freshProducts = []; // To store data from local JSON
 
-    if(pageCount == 1){
-        document.getElementById("pNavBtn1").style.display = "none"
-        document.getElementById("pNavBtn2").style.display = "block"
+    // 1. Fetch from local database.json
+    fetch("/Database/database.json")
+        .then(response => response.json())
+        .then(data => {
+            freshProducts = data.Fresh; // Access the "Fresh" array
+            renderNewItems(); // Initial display
+        })
+        .catch(error => console.log("Error loading Fresh products:", error));
+
+    // 2. Pagination & Slicing Logic
+    function renderNewItems() {
+        const start = (pageCount - 1) * limit;
+        const end = start + limit;
+        const paginatedItems = freshProducts.slice(start, end);
+
+        displayNewItem(paginatedItems);
+        updateNavButtons();
     }
 
-    document.getElementById("pNavBtn2").addEventListener("click", function(){
-        pageCount++
-        if(pageCount>2){
-            pageCount = 3
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
-                document.getElementById("pNavBtn1").style.display = "block"
-                document.getElementById("pNavBtn2").style.display = "none"
-        }
-        else{
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
-                document.getElementById("pNavBtn1").style.display = "block"
-                document.getElementById("pNavBtn2").style.display = "block"
-        }
-    })
-
-    document.getElementById("pNavBtn1").addEventListener("click", function(){
-        pageCount--
-        console.log(pageCount)
-        if(pageCount == 1 || pageCount < 1){
-            pageCount = 1
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
-            document.getElementById("pNavBtn1").style.display = "none"
-            document.getElementById("pNavBtn2").style.display = "block"
-        }
-        else{
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?_page=${pageCount}&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => error)
-            document.getElementById("pNavBtn1").style.display = "block"
-            document.getElementById("pNavBtn2").style.display = "block"
-        }
-    })
-    fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?_page=1&_limit=3`).then(response => response.json()).then(data => displayNewItem(data)).catch(error => console.log(error))
-
-    function displayNewItem(data){
-        let html = ""
+    // 3. Update Nav Button Visibility
+    function updateNavButtons() {
+        const maxPages = Math.ceil(freshProducts.length / limit);
         
-        for(i in data){
+        // pNavBtn1 is "Previous", pNavBtn2 is "Next"
+        document.getElementById("pNavBtn1").style.display = (pageCount > 1) ? "block" : "none";
+        document.getElementById("pNavBtn2").style.display = (pageCount < maxPages) ? "block" : "none";
+    }
 
-            let id = data[i].id
-            let img = data[i].img
-            let name = data[i].name
-            let shr_Desc = data[i].Short_Description
-            let price = data[i].price
-            let desc = data[i].Description
+    // 4. Event Listeners
+    document.getElementById("pNavBtn2").addEventListener("click", function() {
+        pageCount++;
+        renderNewItems();
+    });
 
-            html+=`
-            <div id="displayProduct_Card">
-                <div id="card_image" onmouseover="quickViewIn(${id})" onmouseout="quickViewOut(${id})">
-                    <img src="${img}" class="img" alt="">
+    document.getElementById("pNavBtn1").addEventListener("click", function() {
+        pageCount--;
+        renderNewItems();
+    });
+
+    // 5. Display the UI
+    function displayNewItem(data) {
+        let html = "";
+        data.forEach(item => {
+            // Note: Use 'item.Price' (Capital P) as per your JSON structure
+            html += `
+            <div class="displayProduct_Card">
+                <div class="card_image" onmouseover="quickViewIn(${item.id})" onmouseout="quickViewOut(${item.id})">
+                    <img src="${item.img}" class="img" alt="${item.name}">
                 </div>
                 <div class="card_info">
-                    <p class="card_info_para">${name}</p>
-                    <p class="card_info_para_desc">${shr_Desc}</p>
+                    <p class="card_info_para">${item.name}</p>
+                    <p class="card_info_para_desc">${item.Short_Description}</p>
                 </div>
-                <button onclick="addToCart(${id})" class="card_AddCartBtn">ADD TO BAG</button>
-                <div class="flat" id="quickViewDiv" onclick="getProductDetails(${id})" onmouseover="quickViewIn(${id})" onmouseout="quickViewOut(${id})">
+                <button onclick="addToCart(${item.id})" class="card_AddCartBtn">ADD TO BAG</button>
+                <div class="flat" id="quickViewDiv_${item.id}" onclick="getProductDetails(${item.id})" onmouseover="quickViewIn(${item.id})" onmouseout="quickViewOut(${item.id})">
                     <i class="fas fa-eye">
                         <p>Quicklook</p>
                     </i>
                 </div>
             </div>
-            `
-        }
-        document.getElementById("displayProduct").innerHTML = html
+            `;
+        });
+        document.getElementById("displayProduct").innerHTML = html;
     }
-
 }
+
 //===============================================Adding Data to LS======================================================
-let arr = []
-function addToCart(val){
-    console.log("val")
-    let id = val
-    fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?id=${id}`).then(response => response.json()).then(data => getProductDetailsCart(data)).catch(error => console.log(error))
+// 1. Initialize cart from LocalStorage so you don't lose items on refresh
+// let arr = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(val) {
+    // We assume 'freshProducts' is the global array from your getNewProducts() function
+    // Find the specific product in our local data
+    const product = freshProducts.find(item => item.id === val);
+
+    if (product) {
+        // Create the temp object (mapping the JSON fields to your cart fields)
+        let temp = {
+            id: product.id,
+            name: product.name,
+            img: product.img,
+            price: product.Price,
+            desc: product.Short_Description,
+            count: product.count || 1,
+            total: product.Price // Initial total is just the price
+        };
+
+        // Check if item already exists in cart to avoid duplicates (Optional but recommended)
+        const isAlreadyInCart = arr.some(item => item.id === product.id);
+        
+        if (!isAlreadyInCart) {
+            arr.push(temp);
+            localStorage.setItem("cart", JSON.stringify(arr));
+        }
+
+        // Show the Modal
+        showCartModal();
+    }
+}
+
+function showCartModal() {
+    let modal1 = document.getElementById("myModal1");
+    let span1 = document.getElementsByClassName("close1")[0];
     
-    function getProductDetailsCart(data){
-        let html = ""
-        let id = data[0].id
-        let name = data[0].name
-        let img = data[0].img
-        let price = data[0].Price
-        let shr_Desc = data[0].Short_Description
-        let count = data[0].count
-        let total = data[0].totalP
-        console.log(total)
-        let temp = {}
-        temp.id = id
-        temp.name = name
-        temp.img = img
-        temp.price = price
-        temp.desc = shr_Desc
-        temp.count = count
-        temp.total = total
-
-        console.log(temp)
-        arr = [...arr,temp]
-        localStorage.setItem("cart",JSON.stringify(arr))
-        let modal1 = document.getElementById("myModal1");
-        let span1 = document.getElementsByClassName("close1")[0];
-        modal1.style.display = "block";
-        span1.onclick = function() {
-            modal1.style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target == modal1) {
-                modal1.style.display = "none";
-            }
-        }
-
-        html+= `
+    modal1.style.display = "block";
+    
+    // UI for the Modal
+    let html = `
         <div class="cartAdd">
             <h3>Item Added to Cart</h3>
             <div class="imageBox">
-                <img src="https://media.tenor.com/images/b95474b4e57295c82fb7ffc3b882e683/tenor.gif" class="img" alt="">
+                <img src="https://media.tenor.com/images/b95474b4e57295c82fb7ffc3b882e683/tenor.gif" class="img" alt="Success">
             </div>
         </div>
-        `
-        document.getElementById("cartAddModal").innerHTML = html
-    }
+    `;
+    document.getElementById("cartAddModal").innerHTML = html;
+
+    // Close logic
+    span1.onclick = () => modal1.style.display = "none";
+    window.onclick = (event) => {
+        if (event.target == modal1) modal1.style.display = "none";
+    };
 }
 
-
 //===============================================Product view Modal======================================================
-function getProductDetails(val){
-    let id = val
-    modal.style.display = "block"
-    fetch(`https://bath-and-body-mock-server.herokuapp.com/Fresh?id=${id}`).then(response => response.json()).then(data => displayModalData(data)).catch(error => console.log(error))
+function getProductDetails(val) {
+    // 1. Show the modal immediately
+    const modal = document.getElementById("myModal"); // Ensure this matches your HTML ID
+    modal.style.display = "block";
 
-    function displayModalData(data){
-        console.log(data)
-        let id = data[0].id
-        let name = data[0].name
-        let desc = data[0].Description
-        let price = data[0].Price
-        let shrt_desc = data[0].Short_Description
-        let img = data[0].img
-        let html = ""
+    // 2. Find the product in your local 'freshProducts' array instead of fetching
+    // Note: freshProducts must be defined in the global scope
+    const product = freshProducts.find(item => item.id === val);
 
-        html+= `
+    if (product) {
+        displayModalData(product);
+    } else {
+        console.error("Product not found locally");
+    }
+
+    function displayModalData(data) {
+        // Since we are passing a single object, we don't need data[0]
+        let html = `
         <div class="displayModalCont">
             <div class="displayModalCont_img">
-                <img src="${img}" class="img" alt="">
+                <img src="${data.img}" class="img" alt="${data.name}">
             </div>
             <div class="displayModalCont_info">
                 <div class="displayModalCont_info_name">
-                    <strong>${name}</strong>
-                    <p>${shrt_desc}</p>
+                    <strong>${data.name}</strong>
+                    <p>${data.Short_Description}</p>
                 </div>
-                <div class="displayModalCont_info_desc">${desc}</div>
-                <div class="displayModalCont_info_price">$${price}</div>
+                <div class="displayModalCont_info_desc">${data.Description}</div>
+                <div class="displayModalCont_info_price">$${data.Price}</div>
                 <div class="displayModalCont_info_btn">
-                        <div class="displayModalCont_info_btn_count">
-                            <button id="minusBtn">-</button>
-                            <p id="numValue">0</p>
-                            <button id="plusBtn">+</button>
-                        </div>
-                    <button class="displayModalCont_info_btn_cart">ADD TO BAG</button>
+                    <div class="displayModalCont_info_btn_count">
+                        <button id="modalMinusBtn">-</button>
+                        <p id="modalNumValue">1</p>
+                        <button id="modalPlusBtn">+</button>
+                    </div>
+                    <button class="displayModalCont_info_btn_cart" onclick="addToCart(${data.id})">ADD TO BAG</button>
                 </div>
             </div>
         </div>
-        `
+        `;
 
-        document.getElementById("DisplayModalProductData").innerHTML = html
+        document.getElementById("DisplayModalProductData").innerHTML = html;
+        
+        // 3. Add logic for the + and - buttons inside the modal
+        setupModalCounter();
     }
+}
+
+function setupModalCounter() {
+    const plus = document.getElementById("modalPlusBtn");
+    const minus = document.getElementById("modalMinusBtn");
+    const value = document.getElementById("modalNumValue");
+    let count = 1;
+
+    plus.onclick = () => {
+        count++;
+        value.innerText = count;
+    };
+
+    minus.onclick = () => {
+        if (count > 1) {
+            count--;
+            value.innerText = count;
+        }
+    };
 }
 
 function addToCartH(val){
@@ -330,120 +362,132 @@ function quickViewOut(val){
 }
 
 //==========================================Hompage Mid Banner===========================================================
-window.addEventListener("load", loadBanner)
+window.addEventListener("load", loadBanner);
 
-function loadBanner(){
-    fetch("https://bath-and-body-mock-server.herokuapp.com/Banner").then(response => response.json()).then(data => displayBannerData(data)).catch(error => console.log(error))
+function loadBanner() {
+    // 1. Fetch from the local database.json file
+    fetch("/Database/database.json")
+        .then(response => response.json())
+        .then(data => {
+            // Access the "Banner" array from your JSON
+            displayBannerData(data.Banner); 
+        })
+        .catch(error => console.log("Error loading banners:", error));
 
-    function displayBannerData(data){
-        let html = ""
-        for(let i in data){
-            console.log(data[i])
-            let img = data[i].img
-            let link = data[i].link
-            let desc = data[i].Description
-            let id = data[i].id
-
-            html+=`
+    function displayBannerData(data) {
+        let html = "";
+        
+        // Using forEach is cleaner than for...in for arrays
+        data.forEach(item => {
+            html += `
             <div class="hompageMidPoster_card">
                 <div class="hompageMidPoster_card_img">
-                    <img src="${img}" class="img" alt="">
+                    <img src="${item.img}" class="img" alt="Banner Image">
                 </div>
                 <div class="hompageMidPoster_card_info">
-                    <p>${desc}</p>
-                    <a href="#">${link}</a>
+                    <p>${item.Description}</p>
+                    <a href="#">${item.link}</a>
                 </div>
             </div>
-            `
-        }
-        document.getElementById("hompageMidPoster").innerHTML = html
+            `;
+        });
+        
+        document.getElementById("hompageMidPoster").innerHTML = html;
     }
 }
 
 //=======================================Home Page Category==============================================================
-window.addEventListener("load", getCategory)
+window.addEventListener("load", getCategory);
 
-function getCategory(){
-    fetch("https://bath-and-body-mock-server.herokuapp.com/Category").then(response => response.json()).then(data => displayCategory(data)).catch(error => console.log(error))
+function getCategory() {
+    // 1. Fetch from local JSON
+    fetch("/Database/database.json")
+        .then(response => response.json())
+        .then(data => {
+            // Access the "Category" array from your local file
+            displayCategory(data.Category);
+        })
+        .catch(error => console.log("Error loading categories:", error));
 
-    function displayCategory(data){
-        let html = ""
+    function displayCategory(data) {
+        let html = "";
         
-        for(let i in data){
-            let img = data[i].img
-            let name = data[i].name
-            
-            html+=`
-            <div id="shopByCata_Card">
-                <div id="shopByCata_Card_Img">
-                    <img src="${img}" class="img" alt="">
+        // Loop through the category items
+        data.forEach(item => {
+            html += `
+            <div class="shopByCata_Card">
+                <div class="shopByCata_Card_Img">
+                    <img src="${item.img}" class="img" alt="${item.name}">
                 </div>
-                <div id="shopByCata_Card_Cata">
-                    <p>${name}</p>
+                <div class="shopByCata_Card_Cata">
+                    <p>${item.name}</p>
                 </div>
             </div>
-            `
-        }
-        document.getElementById("shopByCata").innerHTML = html
+            `;
+        });
+        
+        document.getElementById("shopByCata").innerHTML = html;
     }
 }
 //================================================BodyWork Images=========================================================
-window.addEventListener("load", getBodyWorkData)
+window.addEventListener("load", getBodyWorkData);
 
-function getBodyWorkData(){
+function getBodyWorkData() {
+    let pageCount = 1;
+    const limit = 4;
+    let allBodyWorkImages = []; // Array to hold local JSON data
 
-    let pageCount = 1
+    // 1. Fetch from local database.json
+    fetch("/Database/database.json")
+        .then(response => response.json())
+        .then(data => {
+            allBodyWorkImages = data.atBodyWorks;
+            renderBodyWorkPage(); // First load
+        })
+        .catch(error => console.log("Error loading BodyWork data:", error));
 
-    if(pageCount == 1){
-        document.getElementById("leftOfferBtn1").style.display = "none"
-        document.getElementById("rightOfferBtn1").style.display = "block"
+    // 2. Pagination Logic (The "Brain")
+    function renderBodyWorkPage() {
+        const start = (pageCount - 1) * limit;
+        const end = start + limit;
+        const paginatedData = allBodyWorkImages.slice(start, end);
+
+        displayBodyWorkData(paginatedData);
+        updateBodyWorkButtons();
     }
 
-    document.getElementById("rightOfferBtn1").addEventListener("click", function(){
-        pageCount++
-        if(pageCount>2){
-            pageCount = 2
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
-                document.getElementById("leftOfferBtn1").style.display = "block"
-                document.getElementById("rightOfferBtn1").style.display = "none"
-        }
-        else{
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
-                document.getElementById("leftOfferBtn1").style.display = "block"
-                document.getElementById("rightOfferBtn1").style.display = "none"
-        }
-    })
+    // 3. Dynamic Button Visibility
+    function updateBodyWorkButtons() {
+        const maxPages = Math.ceil(allBodyWorkImages.length / limit);
+        
+        document.getElementById("leftOfferBtn1").style.display = (pageCount > 1) ? "block" : "none";
+        document.getElementById("rightOfferBtn1").style.display = (pageCount < maxPages) ? "block" : "none";
+    }
 
-    document.getElementById("leftOfferBtn1").addEventListener("click", function(){
-        pageCount--
-        if(pageCount == 0 || pageCount < 1){
-            pageCount = 1
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
-            document.getElementById("leftOfferBtn1").style.display = "none"
-            document.getElementById("rightOfferBtn1").style.display = "block"
-        }
-        else{
-            fetch(`https://bath-and-body-mock-server.herokuapp.com/atBodyWorks?_page=${pageCount}&_limit=4`).then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
-            document.getElementById("leftOfferBtn1").style.display = "none"
-            document.getElementById("rightOfferBtn1").style.display = "block"
-        }
-    })
-    fetch("https://bath-and-body-mock-server.herokuapp.com/atBodyWorks?_page=1&_limit=4").then(response => response.json()).then(data => displayBodyWorkData(data)).catch(error => error)
+    // 4. Clean Event Listeners
+    document.getElementById("rightOfferBtn1").addEventListener("click", function() {
+        pageCount++;
+        renderBodyWorkPage();
+    });
 
-    function displayBodyWorkData(data){
-        let html = ""
-        for(i in data){
-            let img = data[i].img
+    document.getElementById("leftOfferBtn1").addEventListener("click", function() {
+        pageCount--;
+        renderBodyWorkPage();
+    });
 
-            html+= `
-            <div id="offerCard1">
-            <div id="offerInfor1">
-                <img src="${img}" class="img" alt="">
+    // 5. Build the UI
+    function displayBodyWorkData(data) {
+        let html = "";
+        data.forEach(item => {
+            html += `
+            <div class="offerCard1">
+                <div class="offerInfor1">
+                    <img src="${item.img}" class="img" alt="Social Media BodyWork">
+                </div>
             </div>
-        </div>
-            `
-        }
-        document.getElementById("displayOfferData1").innerHTML = html
+            `;
+        });
+        document.getElementById("displayOfferData1").innerHTML = html;
     }
 }
 

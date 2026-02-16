@@ -629,59 +629,51 @@
         })
 
 
-        //fetch api
-        fetch('https://bath-and-body-mock-server.herokuapp.com/candle')
+     window.addEventListener("load", getCandleData);
 
-            .then(function (response) {
-                response.json().then(function (res) {
-                    console.log(res)
-
-                    let html = ""
-                    for (i in res) {
-                        let img = res[i].img
-                        let title = res[i].title
-                        let name = res[i].name
-                        let subname = res[i].subname
-                        let Price = res[i].Price
-                        html += `
-                       
-          
-                <div id="candlediv">
-                    <img src="${img}" class="img" onclick=getProductDetails() alt="">
-                    <p class="blue">${title}</p>
-                    <p class="name">${name}</p>
-                    <p class="grey">${subname}</p>
-                    <p class="price">${Price}</p>
-                <button class="btnCandle" id="myBtn">ADD TO BAG</button>
-            </div>`
-
-                    }
-                    document.getElementById("candle-right").innerHTML = html
-
-                    //modal box
-                    var modal = document.getElementById("myModal");
-
-                    var btn = document.getElementById("myBtn");
-
-                    var span = document.getElementsByClassName("close")[0];
-
-                    btn.onclick = function () {
-                        modal.style.display = "block";
-                    }
-
-                    span.onclick = function () {
-                        modal.style.display = "none";
-                    }
-
-                    window.onclick = function (event) {
-                        if (event.target == modal) {
-                            modal.style.display = "none";
-                        }
-                    }
-
-                })
-
+    function getCandleData() {
+        // 1. Fetch from local JSON
+        fetch("/Database/database.json")
+            .then(response => response.json())
+            .then(data => {
+                displayCandles(data.candle);
             })
+            .catch(error => console.log("Error loading candles:", error));
+
+        function displayCandles(data) {
+            let html = "";
+            data.forEach(item => {
+                html += `
+                <div class="candlediv">
+                    <img src="${item.img}" class="img" onclick="getProductDetails(${item.id})" alt="${item.name}">
+                    <p class="blue">${item.title}</p>
+                    <p class="name">${item.name}</p>
+                    <p class="grey">${item.subname}</p>
+                    <p class="price">${item.Price}</p>
+                    <button class="btnCandle" onclick="openCandleModal(${item.id})">ADD TO BAG</button>
+                </div>`;
+            });
+            document.getElementById("candle-right").innerHTML = html;
+        }
+    }
+
+    // 2. Optimized Modal Logic
+    function openCandleModal(id) {
+        const modal = document.getElementById("myModal");
+        const span = document.getElementsByClassName("close")[0];
+
+        // Show the modal
+        modal.style.display = "block";
+
+        // Close logic
+        span.onclick = () => modal.style.display = "none";
+        window.onclick = (event) => {
+            if (event.target == modal) modal.style.display = "none";
+        };
+
+        console.log("Added candle ID to bag logic:", id);
+        // You can call your addToCart(id) function here as well!
+    }
 
 
 

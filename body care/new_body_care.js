@@ -114,66 +114,68 @@ close.addEventListener('click',()=>{
 
 
 // ===================================my pages js==================================================
-let arr = []
-function add(event){
+// 1. Declare this globally at the top of your file
+let newBodyProducts = []; 
+let arr = JSON.parse(localStorage.getItem("cart")) || [];
 
-    let btnid = event.target.id
-    fetch(`https://bath-and-body-mock-server.herokuapp.com/new_body`).then(response => response.json()).then(data => alldata(data)).catch(error => console.log(error))
-  function alldata(data){
-    for(let i = 0 ;i<16;i++){
-      if(`btn${data[i].id}` == btnid){
-          var id = data[i].id
-      }
+// 2. Fetch the data once on load
+window.addEventListener("load", () => {
+    fetch("/Database/database.json")
+        .then(res => res.json())
+        .then(data => {
+            newBodyProducts = data.new_body;
+            // logic to display your products goes here...
+        });
+});
+
+// 3. Optimized Add function
+function add(event) {
+    // Extract the numerical ID from the button ID (e.g., "btn1" -> 1)
+    let btnid = event.target.id; 
+    let numericId = parseInt(btnid.replace("btn", ""));
+
+    // Find the product in our local array
+    const product = newBodyProducts.find(item => item.id === numericId);
+
+    if (product) {
+        let temp = {
+            id: product.id,
+            name: product.name,
+            img: product.img,
+            price: product.Price,
+            desc: product.Short_Description,
+            count: product.count || 1,
+            total: product.Price
+        };
+
+        // Add to array and update LocalStorage
+        arr.push(temp);
+        localStorage.setItem("cart", JSON.stringify(arr));
+
+        // Display Success Modal
+        showCartModal();
     }
+}
 
-    fetch(`https://bath-and-body-mock-server.herokuapp.com/new_body?id=${id}`).then(response => response.json()).then(data => getProductDetailsCart(data)).catch(error => console.log(error))
+function showCartModal() {
+    let modal1 = document.getElementById("myModal1");
+    let span1 = document.getElementsByClassName("close1")[0];
     
-    function getProductDetailsCart(data){
-        let html = ""
-        let id = data[0].id
-        let name = data[0].name
-        let img = data[0].img
-        let price = data[0].Price
-        let shr_Desc = data[0].Short_Description
-        let count = data[0].count
-        let total = data[0].totalP
-        console.log(total)
-        let temp = {}
-        temp.id = id
-        temp.name = name
-        temp.img = img
-        temp.price = price
-        temp.desc = shr_Desc
-        temp.count = count
-        temp.total = total
-
-        console.log(temp)
-        arr = [...arr,temp]
-        localStorage.setItem("cart",JSON.stringify(arr))
-        let modal1 = document.getElementById("myModal1");
-        let span1 = document.getElementsByClassName("close1")[0];
-        modal1.style.display = "block";
-        span1.onclick = function() {
-            modal1.style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target == modal1) {
-                modal1.style.display = "none";
-            }
-        }
-
-        html+= `
+    modal1.style.display = "block";
+    
+    document.getElementById("cartAddModal").innerHTML = `
         <div class="cartAdd">
             <h3>Item Added to Cart</h3>
             <div class="imageBox">
-                <img src="https://media.tenor.com/images/b95474b4e57295c82fb7ffc3b882e683/tenor.gif" class="img" alt="">
+                <img src="https://media.tenor.com/images/b95474b4e57295c82fb7ffc3b882e683/tenor.gif" class="img" alt="Success">
             </div>
         </div>
-        `
-        document.getElementById("cartAddModal").innerHTML = html
-    }
-  }
+    `;
+
+    span1.onclick = () => modal1.style.display = "none";
+    window.onclick = (e) => { if (e.target == modal1) modal1.style.display = "none"; };
 }
+
 var expanded = false;
 
 function showCheckboxes1() {
